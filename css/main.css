@@ -1509,24 +1509,19 @@ pre .javascript .function {
 }
 .links-of-author {
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .links-of-author a {
   display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border-bottom-color: #555;
-  font-size: 13px;
+  padding: 32 32px;
+  color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+  border-radius: 32px;
 }
-.links-of-author a:before {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 3px;
-  content: " ";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #903ed7;
+.links-of-author a:hover {
+  color: #fff;
+  background: #f0f0f0;
 }
 .sidebar-nav {
   margin: 0 0 20px;
