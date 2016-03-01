@@ -237,7 +237,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-03-01T08:59:24+08:00" content="2016-03-01">
+            <time itemprop="dateCreated" datetime="2016-03-01T07:12:22+08:00" content="2016-03-01">
               2016-03-01
             </time>
           </span>
@@ -272,14 +272,25 @@
       
         
           
-            <h1 id="開心！部落格用奇怪的方式復活了！"><a href="#開心！部落格用奇怪的方式復活了！" class="headerlink" title="開心！部落格用奇怪的方式復活了！"></a>開心！部落格用奇怪的方式復活了！</h1><p>　　會陸續把一些舊文章移過來～～<br>　　感謝 <a href="https://github.com/samsam2310" title="github" target="_blank" rel="external">samsam2310</a> 推薦我用 <a href="https://hexo.io" target="_blank" rel="external">Hexo</a> 作為本網誌的框架。</p>
-<h1 id="細數架站點滴"><a href="#細數架站點滴" class="headerlink" title="細數架站點滴"></a>細數架站點滴</h1><p>　　Hexo 框架被設計得滿方便使用的，才花不到半個小時就完成了架站工作和一些基本設定，不過因為我是用 github page 存放網頁，更新網頁倒顯得有點慢，暑假可能考慮來架伺服器。</p>
+            <p>Latest Update: 2016-03-01 04:32:39</p>
+<h1 id="開心！部落格用奇怪的方式復活了！"><a href="#開心！部落格用奇怪的方式復活了！" class="headerlink" title="開心！部落格用奇怪的方式復活了！"></a>開心！部落格用奇怪的方式復活了！</h1><p>　　會陸續把一些舊文章移過來～～<br>　　感謝 <a href="https://github.com/samsam2310" title="github" target="_blank" rel="external">samsam2310</a> 推薦我用 <a href="https://hexo.io" target="_blank" rel="external">Hexo</a> 作為本網誌的框架。</p>
+<h1 id="細數架站點滴"><a href="#細數架站點滴" class="headerlink" title="細數架站點滴"></a>細數架站點滴</h1><p>　　Hexo 框架被設計得滿方便使用的，才花不到半個小時就完成了架站工作和一些基本設定。</p>
+<h2 id="為什麼選-Github-Page-與-Hexo"><a href="#為什麼選-Github-Page-與-Hexo" class="headerlink" title="為什麼選 Github Page 與 Hexo"></a>為什麼選 Github Page 與 Hexo</h2><p>　　<del> Github 是目前全球最大的男性同性交友平台⋯⋯ </del> 咳，不是這樣的。<br>　　Github 提供每個 repository 1 GB 的容量，基本上寫個 Blog 應該是不會搞到超過 1GB 啦，還有 git 的方便性以及免費的個人化網址（.github.io）。<br>　　Hexo 如官網所言，是快速、簡單且強大的網誌框架。豐富的外掛是它最受我青睞的地方，也有很多網上大神為它寫了主題，如本站所使用的 <a href="https://github.com/iissnan/hexo-theme-next" title="github" target="_blank" rel="external">NexT</a> 主題。 Markdown 的支援更讓寫文章變得方便且輕鬆。</p>
 <h2 id="準備工作"><a href="#準備工作" class="headerlink" title="準備工作"></a>準備工作</h2><ul>
 <li>github account</li>
 <li>node.js</li>
 <li>git</li>
 </ul>
-<h2 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h2>
+<h2 id="New-Repository"><a href="#New-Repository" class="headerlink" title="New Repository"></a>New Repository</h2><p>　　Github Page 分成 user or organization site 和 project site 兩種，前者是每個帳號自己的個人網站，後者是依附專案的網站。先 new 一個 repository 出來，名為 username.github.io，username 填入 github 的 username。<br>　　之後 clone the repository 到你準備存放網站的資料夾裡：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/username/username.github.io</span><br></pre></td></tr></table></figure></p>
+<h2 id="安裝-Hexo"><a href="#安裝-Hexo" class="headerlink" title="安裝 Hexo"></a>安裝 Hexo</h2><blockquote>
+<h3 id="Mac-使用者"><a href="#Mac-使用者" class="headerlink" title="Mac 使用者"></a>Mac 使用者</h3><p>編譯時可能會碰到問題，請先安裝 Xcode Command Line Tools。<br>如果嫌 Xcode IDE 太肥，試試這個：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>　　一旦所有的必備軟體都安裝完畢後，即可透過 npm 安裝 Hexo：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<h2 id="部署-Hexo"><a href="#部署-Hexo" class="headerlink" title="部署 Hexo"></a>部署 Hexo</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h2 id="部署到-Github-上"><a href="#部署到-Github-上" class="headerlink" title="部署到 Github 上"></a>部署到 Github 上</h2><p>　　找到 <code>_config.yml</code> 中的 Deployment 標籤，並設定如下：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> git</span><br><span class="line"><span class="attr">  repository:</span> https://github.com/username/username.github.io.git</span><br><span class="line"><span class="attr">  branch:</span> master</span><br></pre></td></tr></table></figure></p>
+<p>　　接著依序輸入以下指令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>　　完成了，到 <a href="http://username.github.io/" target="_blank" rel="external">http://username.github.io/</a> 就能看到剛發佈上去的 Blog 了！</p>
+<h2 id="有關-Hexo-更詳細的使用在文件裡都有記載喔！"><a href="#有關-Hexo-更詳細的使用在文件裡都有記載喔！" class="headerlink" title="有關 Hexo 更詳細的使用在文件裡都有記載喔！"></a>有關 Hexo 更詳細的使用在<a href="https://hexo.io/docs/" target="_blank" rel="external">文件</a>裡都有記載喔！</h2>
           
         
       
@@ -348,6 +359,13 @@
           
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
           
 
         </nav>
