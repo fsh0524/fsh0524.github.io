@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fsh0524.github.io/"/>
-  <updated>2016-03-01T04:00:29.000Z</updated>
+  <updated>2016-03-01T04:02:03.000Z</updated>
   <id>http://fsh0524.github.io/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="http://fsh0524.github.io/2016/03/01/hello-world/"/>
     <id>http://fsh0524.github.io/2016/03/01/hello-world/</id>
     <published>2016-03-01T00:59:24.000Z</published>
-    <updated>2016-03-01T04:00:29.000Z</updated>
+    <updated>2016-03-01T04:02:03.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;開心！部落格用奇怪的方式復活了！&quot;&gt;&lt;a href=&quot;#開心！部落格用奇怪的方式復活了！&quot; class=&quot;headerlink&quot; title=&quot;開心！部落格用奇怪的方式復活了！&quot;&gt;&lt;/a&gt;開心！部落格用奇怪的方式復活了！&lt;/h1&gt;&lt;p&gt;　　會陸續把一些舊文章移過來～～&lt;br&gt;　　感謝 &lt;a href=&quot;https://github.com/samsam2310&quot; title=&quot;github&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;samsam2310&lt;/a&gt; 推薦我用 &lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt; 作為本網誌的框架。&lt;/p&gt;
 &lt;h1 id=&quot;細數架站點滴&quot;&gt;&lt;a href=&quot;#細數架站點滴&quot; class=&quot;headerlink&quot; title=&quot;細數架站點滴&quot;&gt;&lt;/a&gt;細數架站點滴&lt;/h1&gt;&lt;p&gt;　　Hexo 框架被設計得滿方便使用的，才花不到半個小時就完成了架站工作和一些基本設定，不過因為我是用 github page 存放網頁，更新網頁倒顯得有點慢，暑假可能考慮來架伺服器。&lt;/p&gt;
 &lt;h2 id=&quot;準備工作&quot;&gt;&lt;a href=&quot;#準備工作&quot; class=&quot;headerlink&quot; title=&quot;準備工作&quot;&gt;&lt;/a&gt;準備工作&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;github account&lt;/li&gt;
 &lt;li&gt;node.js&lt;/li&gt;
-&lt;li&gt;git&lt;h2 id=&quot;開始&quot;&gt;&lt;a href=&quot;#開始&quot; class=&quot;headerlink&quot; title=&quot;開始&quot;&gt;&lt;/a&gt;開始&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;git&lt;/li&gt;
 &lt;/ul&gt;
-</content>
+&lt;h2 id=&quot;開始&quot;&gt;&lt;a href=&quot;#開始&quot; class=&quot;headerlink&quot; title=&quot;開始&quot;&gt;&lt;/a&gt;開始&lt;/h2&gt;</content>
     
     <summary type="html">
     
