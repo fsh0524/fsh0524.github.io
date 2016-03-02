@@ -933,9 +933,13 @@ pre .javascript .function {
   font-weight: normal;
 }
 .site-subtitle {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #999;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  line-height: 36px;
+  font-size: 16px;
+  font-weight: normal;
+  font-color: #666;
 }
 .use-motion .brand {
   opacity: 0;
