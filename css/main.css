@@ -935,11 +935,10 @@ pre .javascript .function {
 .site-subtitle {
   display: inline-block;
   vertical-align: top;
-  margin-left: 15px;
+  margin-left: 20px;
   line-height: 36px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
-  font-color: #666;
 }
 .use-motion .brand {
   opacity: 0;
@@ -2036,12 +2035,14 @@ hr {
 .site-meta .logo {
   display: none;
 }
-.site-meta .site-title {
+.site-meta .site-title,
+.site-meta .site-subtitle {
   font-size: 22px;
   font-weight: bolder;
 }
 @media (max-width: 767px) {
-  .site-meta .site-title {
+  .site-meta .site-title,
+  .site-meta .site-subtitle {
     line-height: 34px;
   }
 }
