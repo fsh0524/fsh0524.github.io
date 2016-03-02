@@ -890,7 +890,11 @@ pre .javascript .function {
 }
 .header {
   background: #fff;
-  height: 140px;
+}
+@media screen and (min-width: 770px) {
+  .header {
+    height: 140px;
+  }
 }
 .header-inner {
   position: relative;
