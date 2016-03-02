@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fsh0524.github.io/"/>
-  <updated>2016-03-02T05:39:16.000Z</updated>
+  <updated>2016-03-02T07:23:17.000Z</updated>
   <id>http://fsh0524.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://fsh0524.github.io/2016/03/01/hello-world/"/>
     <id>http://fsh0524.github.io/2016/03/01/hello-world/</id>
     <published>2016-02-29T23:12:22.000Z</published>
-    <updated>2016-03-02T05:39:16.000Z</updated>
+    <updated>2016-03-02T07:23:17.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-03-02 01:39:16&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-03-02 03:23:17&lt;/p&gt;
 &lt;h1 id=&quot;開心！部落格用奇怪的方式復活了！&quot;&gt;&lt;a href=&quot;#開心！部落格用奇怪的方式復活了！&quot; class=&quot;headerlink&quot; title=&quot;開心！部落格用奇怪的方式復活了！&quot;&gt;&lt;/a&gt;開心！部落格用奇怪的方式復活了！&lt;/h1&gt;&lt;p&gt;　　會陸續把一些舊文章移過來～～&lt;br&gt;　　感謝 &lt;a href=&quot;https://github.com/samsam2310&quot; title=&quot;github&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;samsam2310&lt;/a&gt; 推薦我用 &lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt; 作為本網誌的框架。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;細數架站點滴&quot;&gt;&lt;a href=&quot;#細數架站點滴&quot; class=&quot;headerlink&quot; title=&quot;細數架站點滴&quot;&gt;&lt;/a&gt;細數架站點滴&lt;/h1&gt;&lt;p&gt;　　Hexo 框架被設計得滿方便使用的，才花不到半個小時就完成了架站工作和一些基本設定。&lt;/p&gt;
@@ -45,15 +45,17 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-03-02 01:39:16&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-03-02 03:23:17&lt;/p&gt;
 &lt;h1 id=&quot;開心！部落格用奇怪的方式復活了！&quot;&gt;&lt;a href=&quot;#開心！部落格用奇怪的方式復活了！&quot; class=&quot;headerlink&quot; title=&quot;開心！部落格用奇怪的方式復活了！&quot;&gt;&lt;/a&gt;開心！部落格用奇怪的方式復活了！&lt;/h1&gt;&lt;p&gt;　　會陸續把一些舊文章移過來～～&lt;br&gt;　　感謝 &lt;a href=&quot;https://github.com/samsam2310&quot; title=&quot;github&quot;&gt;samsam2310&lt;/a&gt; 推薦我用 &lt;a href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt; 作為本網誌的框架。&lt;/p&gt;
     
     </summary>
     
+      <category term="記事" scheme="http://fsh0524.github.io/categories/%E8%A8%98%E4%BA%8B/"/>
     
-      <category term="教程" scheme="http://fsh0524.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="記事" scheme="http://fsh0524.github.io/tags/%E8%A8%98%E4%BA%8B/"/>
+      <category term="Hexo" scheme="http://fsh0524.github.io/tags/Hexo/"/>
+    
+      <category term="Web" scheme="http://fsh0524.github.io/tags/Web/"/>
     
   </entry>
   
