@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fsh0524.github.io/"/>
-  <updated>2016-03-02T23:58:43.000Z</updated>
+  <updated>2016-03-03T01:48:08.000Z</updated>
   <id>http://fsh0524.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LaTeX 在 Hexo 中的使用</title>
+    <link href="http://fsh0524.github.io/2016/03/03/LaTeX-in-Hexo/"/>
+    <id>http://fsh0524.github.io/2016/03/03/LaTeX-in-Hexo/</id>
+    <published>2016-03-03T00:22:13.000Z</published>
+    <updated>2016-03-03T01:48:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Latest Update: 2016-03-03 09:48:08&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;　　(╯°□°）╯︵ ┻━┻&lt;br&gt;　　昨天為了 &lt;a href=&quot;https://www.mathjax.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MathJax&lt;/a&gt; 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown&lt;/a&gt; 和 &lt;a href=&quot;https://latex-project.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LaTeX&lt;/a&gt; 語法衝突的問題。&lt;/p&gt;
+&lt;h1 id=&quot;MathJax-插件&quot;&gt;&lt;a href=&quot;#MathJax-插件&quot; class=&quot;headerlink&quot; title=&quot;MathJax 插件&quot;&gt;&lt;/a&gt;MathJax 插件&lt;/h1&gt;&lt;p&gt;　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;　　如果沒有的話，可以從下列指令安裝：&lt;br&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-math --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&quot;使用（LaTeX語法）&quot;&gt;&lt;a href=&quot;#使用（LaTeX語法）&quot; class=&quot;headerlink&quot; title=&quot;使用（LaTeX語法）&quot;&gt;&lt;/a&gt;使用（&lt;a href=&quot;https://en.wikibooks.org/wiki/LaTeX/Mathematics&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LaTeX語法&lt;/a&gt;）&lt;/h1&gt;&lt;h2 id=&quot;行內公式&quot;&gt;&lt;a href=&quot;#行內公式&quot; class=&quot;headerlink&quot; title=&quot;行內公式&quot;&gt;&lt;/a&gt;行內公式&lt;/h2&gt;&lt;p&gt;　　在公式前後加上 &lt;code&gt;$&lt;/code&gt; 來添加行內數學公式。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;行內公式 $\sin ^&amp;#123; 2 &amp;#125;&amp;#123; \theta +\cos ^&amp;#123; 2 &amp;#125;&amp;#123; \theta =1 &amp;#125;  &amp;#125;$ 行內公式&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;效果：&quot;&gt;&lt;a href=&quot;#效果：&quot; class=&quot;headerlink&quot; title=&quot;效果：&quot;&gt;&lt;/a&gt;效果：&lt;/h3&gt;&lt;p&gt;行內公式 $\sin ^{ 2 }{ \theta +\cos ^{ 2 }{ \theta =1 }  }$ 行內公式&lt;/p&gt;
+&lt;h2 id=&quot;整行公式&quot;&gt;&lt;a href=&quot;#整行公式&quot; class=&quot;headerlink&quot; title=&quot;整行公式&quot;&gt;&lt;/a&gt;整行公式&lt;/h2&gt;&lt;p&gt;　　在公式前後加上 &lt;code&gt;$$&lt;/code&gt; 來添加整行數學公式。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$$\frac &amp;#123; dy &amp;#125;&amp;#123; dx &amp;#125; =\frac &amp;#123; &amp;#123; e &amp;#125;^&amp;#123; x &amp;#125; &amp;#125;&amp;#123; 3&amp;#123; y &amp;#125;^&amp;#123; 2 &amp;#125; &amp;#125;$$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;效果：-1&quot;&gt;&lt;a href=&quot;#效果：-1&quot; class=&quot;headerlink&quot; title=&quot;效果：&quot;&gt;&lt;/a&gt;效果：&lt;/h3&gt;&lt;p&gt;$$\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }$$&lt;/p&gt;
+&lt;h1 id=&quot;與-Markdown-發生衝突&quot;&gt;&lt;a href=&quot;#與-Markdown-發生衝突&quot; class=&quot;headerlink&quot; title=&quot;與 Markdown 發生衝突&quot;&gt;&lt;/a&gt;與 Markdown 發生衝突&lt;/h1&gt;&lt;p&gt;　　有些狀況下，LaTeX 無法被正常渲染，如：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$$\lim _&amp;#123; x\rightarrow \infty  &amp;#125;&amp;#123; \sum _&amp;#123; k=1 &amp;#125;^&amp;#123; x &amp;#125;&amp;#123; \frac &amp;#123; \sin &amp;#123; k &amp;#125; +\cos &amp;#123; k &amp;#125;  &amp;#125;&amp;#123; k &amp;#125;  &amp;#125;  &amp;#125; $$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;效果：-2&quot;&gt;&lt;a href=&quot;#效果：-2&quot; class=&quot;headerlink&quot; title=&quot;效果：&quot;&gt;&lt;/a&gt;效果：&lt;/h3&gt;&lt;p&gt;$$\lim &lt;em&gt;{ x\rightarrow \infty  }{ \sum &lt;/em&gt;{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$&lt;/p&gt;
+&lt;p&gt;　　這個&lt;a href=&quot;https://www.codecogs.com/eqnedit.php?latex=\lim&amp;space;_{&amp;space;x\rightarrow&amp;space;\infty&amp;space;}{&amp;space;\sum&amp;space;_{&amp;space;k=1&amp;space;}^{&amp;space;x&amp;space;}{&amp;space;\frac&amp;space;{&amp;space;\sin&amp;space;{&amp;space;k&amp;space;}&amp;space;&amp;plus;\cos&amp;space;{&amp;space;k&amp;space;}&amp;space;}{&amp;space;k&amp;space;}&amp;space;}&amp;space;}&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;公式&lt;/a&gt;是完全正確的，但卻無法成功地被渲染，仔細一看才發現 &lt;code&gt;{ x\rightarrow \infty  }{ \sum&lt;/code&gt; 是斜體顯示的。&lt;br&gt;　　Markdown中 &lt;code&gt;_斜體_&lt;/code&gt; 是&lt;em&gt;斜體&lt;/em&gt;的語法，跳脫字元就能解決這個問題了。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$$\lim \_&amp;#123; x\rightarrow \infty  &amp;#125;&amp;#123; \sum \_&amp;#123; k=1 &amp;#125;^&amp;#123; x &amp;#125;&amp;#123; \frac &amp;#123; \sin &amp;#123; k &amp;#125; +\cos &amp;#123; k &amp;#125;  &amp;#125;&amp;#123; k &amp;#125;  &amp;#125;  &amp;#125; $$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;效果：-3&quot;&gt;&lt;a href=&quot;#效果：-3&quot; class=&quot;headerlink&quot; title=&quot;效果：&quot;&gt;&lt;/a&gt;效果：&lt;/h3&gt;&lt;p&gt;$$\lim _{ x\rightarrow \infty  }{ \sum _{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Latest Update: 2016-03-03 09:48:08&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;　　(╯°□°）╯︵ ┻━┻&lt;br&gt;　　昨天為了 &lt;a href=&quot;https://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt; 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; 和 &lt;a href=&quot;https://latex-project.org/&quot;&gt;LaTeX&lt;/a&gt; 語法衝突的問題。&lt;/p&gt;
+&lt;h1 id=&quot;MathJax-插件&quot;&gt;&lt;a href=&quot;#MathJax-插件&quot; class=&quot;headerlink&quot; title=&quot;MathJax 插件&quot;&gt;&lt;/a&gt;MathJax 插件&lt;/h1&gt;&lt;p&gt;　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="記事" scheme="http://fsh0524.github.io/categories/%E8%A8%98%E4%BA%8B/"/>
+    
+    
+      <category term="LaTeX" scheme="http://fsh0524.github.io/tags/LaTeX/"/>
+    
+      <category term="MathJax" scheme="http://fsh0524.github.io/tags/MathJax/"/>
+    
+      <category term="Hexo" scheme="http://fsh0524.github.io/tags/Hexo/"/>
+    
+      <category term="Markdown" scheme="http://fsh0524.github.io/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>TIOJ 1007. 燈泡問題</title>
