@@ -59,20 +59,20 @@
 
 
 
-<meta name="description" content="Latest Update: 2016-03-03 09:48:08
+<meta name="description" content="Latest Update: 2016-03-03 09:52:32
 前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
 MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX 在 Hexo 中的使用">
 <meta property="og:url" content="http://fsh0524.github.io/2016/03/03/LaTeX-in-Hexo/index.html">
 <meta property="og:site_name" content="野有蔓草">
-<meta property="og:description" content="Latest Update: 2016-03-03 09:48:08
+<meta property="og:description" content="Latest Update: 2016-03-03 09:52:32
 前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
 MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
-<meta property="og:updated_time" content="2016-03-03T01:48:08.000Z">
+<meta property="og:updated_time" content="2016-03-03T01:52:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTeX 在 Hexo 中的使用">
-<meta name="twitter:description" content="Latest Update: 2016-03-03 09:48:08
+<meta name="twitter:description" content="Latest Update: 2016-03-03 09:52:32
 前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
 MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
 
@@ -305,7 +305,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
       
 
       
-        <p>Latest Update: 2016-03-03 09:48:08</p>
+        <p>Latest Update: 2016-03-03 09:52:32</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　(╯°□°）╯︵ ┻━┻<br>　　昨天為了 <a href="https://www.mathjax.org/" target="_blank" rel="external">MathJax</a> 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a> 和 <a href="https://latex-project.org/" target="_blank" rel="external">LaTeX</a> 語法衝突的問題。</p>
 <h1 id="MathJax-插件"><a href="#MathJax-插件" class="headerlink" title="MathJax 插件"></a>MathJax 插件</h1><p>　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。<br><a id="more"></a><br>　　如果沒有的話，可以從下列指令安裝：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-math --save</span><br></pre></td></tr></table></figure></p>
 <h1 id="使用（LaTeX語法）"><a href="#使用（LaTeX語法）" class="headerlink" title="使用（LaTeX語法）"></a>使用（<a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics" target="_blank" rel="external">LaTeX語法</a>）</h1><h2 id="行內公式"><a href="#行內公式" class="headerlink" title="行內公式"></a>行內公式</h2><p>　　在公式前後加上 <code>$</code> 來添加行內數學公式。</p>
@@ -316,7 +316,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
 <h3 id="效果：-1"><a href="#效果：-1" class="headerlink" title="效果："></a>效果：</h3><p>$$\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }$$</p>
 <h1 id="與-Markdown-發生衝突"><a href="#與-Markdown-發生衝突" class="headerlink" title="與 Markdown 發生衝突"></a>與 Markdown 發生衝突</h1><p>　　有些狀況下，LaTeX 無法被正常渲染，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim _&#123; x\rightarrow \infty  &#125;&#123; \sum _&#123; k=1 &#125;^&#123; x &#125;&#123; \frac &#123; \sin &#123; k &#125; +\cos &#123; k &#125;  &#125;&#123; k &#125;  &#125;  &#125; $$</span><br></pre></td></tr></table></figure></p>
 <h3 id="效果：-2"><a href="#效果：-2" class="headerlink" title="效果："></a>效果：</h3><p>$$\lim <em>{ x\rightarrow \infty  }{ \sum </em>{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$</p>
-<p>　　這個<a href="https://www.codecogs.com/eqnedit.php?latex=\lim&space;_{&space;x\rightarrow&space;\infty&space;}{&space;\sum&space;_{&space;k=1&space;}^{&space;x&space;}{&space;\frac&space;{&space;\sin&space;{&space;k&space;}&space;&plus;\cos&space;{&space;k&space;}&space;}{&space;k&space;}&space;}&space;}" target="_blank" rel="external">公式</a>是完全正確的，但卻無法成功地被渲染，仔細一看才發現 <code>{ x\rightarrow \infty  }{ \sum</code> 是斜體顯示的。<br>　　Markdown中 <code>_斜體_</code> 是<em>斜體</em>的語法，跳脫字元就能解決這個問題了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim \_&#123; x\rightarrow \infty  &#125;&#123; \sum \_&#123; k=1 &#125;^&#123; x &#125;&#123; \frac &#123; \sin &#123; k &#125; +\cos &#123; k &#125;  &#125;&#123; k &#125;  &#125;  &#125; $$</span><br></pre></td></tr></table></figure></p>
+<p>　　這個公式是完全正確的，但卻無法成功地被渲染，仔細一看才發現 <code>{ x\rightarrow \infty  }{ \sum</code> 是斜體顯示的。<br>　　Markdown中 <code>_斜體_</code> 是<em>斜體</em>的語法，跳脫字元就能解決這個問題了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim \_&#123; x\rightarrow \infty  &#125;&#123; \sum \_&#123; k=1 &#125;^&#123; x &#125;&#123; \frac &#123; \sin &#123; k &#125; +\cos &#123; k &#125;  &#125;&#123; k &#125;  &#125;  &#125; $$</span><br></pre></td></tr></table></figure></p>
 <h3 id="效果：-3"><a href="#效果：-3" class="headerlink" title="效果："></a>效果：</h3><p>$$\lim _{ x\rightarrow \infty  }{ \sum _{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$</p>
 
       
