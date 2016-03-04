@@ -53,13 +53,13 @@
   </entry>
   
   <entry>
-    <title>1119 . 複雜之河內塔問題</title>
+    <title>TIOJ 1119 . 複雜之河內塔問題</title>
     <link href="http://fsh0524.github.io/2016/03/03/TIOJ-1119/"/>
     <id>http://fsh0524.github.io/2016/03/03/TIOJ-1119/</id>
     <published>2016-03-03T06:41:16.000Z</published>
-    <updated>2016-03-03T08:23:48.000Z</updated>
+    <updated>2016-03-04T14:38:17.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-03-03 04:23:48&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-03-04 10:38:17&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　考慮以下的「河內之塔」的一種變化型態。一平面上豎著$A,B,C$三根小木樁，其中的木樁$A$由上而下套著一些圓環，共有若干種尺寸，每種尺寸的圓環各有若干個，由小而大排列，如圖所示。假設相同尺寸的圓環都不一樣(如下圖所示，我們可將圓環由上而下編號為$1$、$2$、$3$、…)。現在我們想要將所有這些圓環由木樁$A$搬到木樁$C$，而使得最後在木樁$C$上面的圓環編號由上而下仍為$1$、$2$、$3$、…。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;　　搬動的規則如下：&lt;br&gt;-　一次只能搬動一個圓環。&lt;br&gt;-　每次搬動都須由某根木樁搬到另一根木樁，圓環不能被暫時放到非木樁的其他地方。&lt;br&gt;-　對任何木樁上任意兩個相鄰圓環而言，上面的圓環一定不能比下面的圓環大。&lt;br&gt;　　此題便是要請你設計一個程式來求出最少須搬移的次數。以下圖為例，最小尺寸的圓環有$1$個，次小的有$2$個，最大的圓環有$1$個。圖中所顯示的搬移方式是最佳解，共須搬移$9$次。&lt;br&gt;　　&lt;img src=&quot;/images/TIOJ-1119/0.png&quot;&gt;&lt;br&gt;　　條件限制：圓環的尺寸種類最少$1$種，最多$10$種。每種圓環的數量介於$1$至$10$個之間。&lt;/p&gt;
@@ -76,7 +76,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-03-03 04:23:48&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-03-04 10:38:17&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　考慮以下的「河內之塔」的一種變化型態。一平面上豎著$A,B,C$三根小木樁，其中的木樁$A$由上而下套著一些圓環，共有若干種尺寸，每種尺寸的圓環各有若干個，由小而大排列，如圖所示。假設相同尺寸的圓環都不一樣(如下圖所示，我們可將圓環由上而下編號為$1$、$2$、$3$、…)。現在我們想要將所有這些圓環由木樁$A$搬到木樁$C$，而使得最後在木樁$C$上面的圓環編號由上而下仍為$1$、$2$、$3$、…。&lt;/p&gt;
     
     </summary>
