@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fsh0524.github.io/"/>
-  <updated>2016-10-09T10:16:15.000Z</updated>
+  <updated>2016-10-11T02:29:06.000Z</updated>
   <id>http://fsh0524.github.io/</id>
   
   <author>
@@ -14,6 +14,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>從 Nim 到 Sprague–Grundy 定理</title>
+    <link href="http://fsh0524.github.io/2016/10/11/SG-theorem/"/>
+    <id>http://fsh0524.github.io/2016/10/11/SG-theorem/</id>
+    <published>2016-10-10T23:02:07.000Z</published>
+    <updated>2016-10-11T02:29:06.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Latest Update: 2016-10-11 10:29:06&lt;/p&gt;
+&lt;p&gt;先思考一個簡單的問題：&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;場上有 $n$ 堆數量不一的石頭，&lt;a href=&quot;http://wikiwiki.jp/kancolle/?%B6%C7&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Akatsuki&lt;/a&gt; 和 &lt;a href=&quot;http://wikiwiki.jp/kancolle/?Bismarck&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bismarck&lt;/a&gt; 分別為先手和後手，在他們各自的回合都能選擇從其中一堆拿走一顆以上的石頭，拿到最後一顆石頭者勝。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;猜想&quot;&gt;&lt;a href=&quot;#猜想&quot; class=&quot;headerlink&quot; title=&quot;猜想&quot;&gt;&lt;/a&gt;猜想&lt;/h1&gt;&lt;p&gt;我們可以明確地知道，如果 $n = 1$，那麼 Akatsuki 必勝（她只要取走全部的石頭就贏了！）。那麼 $n$ 堆石頭的狀況呢？&lt;/p&gt;
+&lt;p&gt;我們定義$\oplus$為$xor$運算，$X=\{x_1, x_2, …, x_i, …, x_n\} $ 為某個狀態 $SG(X) = x_1 \oplus x_2 \oplus … \oplus x_i \oplus … \oplus x_n$。&lt;/p&gt;
+&lt;p&gt;當把狀態轉移為$SG(X ’ )=0$時 Bismarck 必勝，那麼存在必勝策略是讓$SG(X ’)$變為$0$，否則 Akatsuki 必勝。&lt;/p&gt;
+&lt;h1 id=&quot;思考&quot;&gt;&lt;a href=&quot;#思考&quot; class=&quot;headerlink&quot; title=&quot;思考&quot;&gt;&lt;/a&gt;思考&lt;/h1&gt;&lt;p&gt;看到這裡，如果是不知道 Nim 的讀者一定很困惑我在寫三小。讓我們把問題再單純化：&lt;/p&gt;
+&lt;p&gt;首先定義這個遊戲的雙方都可以做相同的選擇與操作，且都能看見對方的選擇與狀態的轉移。&lt;/p&gt;
+&lt;p&gt;對於遊戲中的一個狀態 $x$（如一堆石頭），我們定義：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果 $x$ 無法被轉移到其他狀態，我們稱之為 $P-position$，$SG(x)=0$。&lt;/li&gt;
+&lt;li&gt;如果 $x$ 可以被轉移到其他狀態，我們稱之為 $N-position$。&lt;ul&gt;
+&lt;li&gt;$x$ 可以被轉移到$S=\{x_1, x_2, …, x_n\}$集合上的任一狀態。&lt;/li&gt;
+&lt;li&gt;$SG(x)=mex\{SG(x_1), SG(x_2), …, SG(x_n)\}$。&lt;/li&gt;
+&lt;li&gt;$mex\{A\}$為不在$A$集合中的最小非負整數。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由此我們很清楚地知道開始狀態是$x$的遊戲中，$SG(x)&amp;gt;0$表示先手必勝（必能使對方得到$P-position$），反之，後手必勝（先手就已經是$P-position$了）。&lt;/p&gt;
+&lt;h1 id=&quot;證明&quot;&gt;&lt;a href=&quot;#證明&quot; class=&quot;headerlink&quot; title=&quot;證明&quot;&gt;&lt;/a&gt;證明&lt;/h1&gt;&lt;p&gt;對於一個問題的狀態 $X$，可以被拆成很多個操作不互相干擾的、獨立的子問題 $X=\{x_1, x_2, …, x_i, …, x_n\}$。&lt;/p&gt;
+&lt;p&gt;回到剛剛的 Nim，我們假設了$SG(X) = x_1 \oplus x_2 \oplus … \oplus x_i \oplus … \oplus x_n$，且當$SG(X)=0$時後手必勝，反之則先手必勝。&lt;/p&gt;
+&lt;p&gt;在這裡我們先令$b = x_1 \oplus x_2 \oplus … \oplus x_i \oplus … \oplus x_n$。&lt;/p&gt;
+&lt;p&gt;玩家在一個回合內可以選擇狀態中的第 $i$ 個子問題做一次操作，轉移成 $X_i’ =\{x_1, x_2, …, x_i ’, …, x_n\} $。&lt;/p&gt;
+&lt;p&gt;那麼由上面$SG$函數的定義，令$S$為從$X$狀態轉移出來的集合，我們可以知道如果$b=SG(X)$：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$\forall_{0\leq a&amp;lt;b},\exists_{X’\in S},SG(X’) = a$&lt;/li&gt;
+&lt;li&gt;$\forall_{X’\in S} SG(X’) \neq b$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;證明-1&quot;&gt;&lt;a href=&quot;#證明-1&quot; class=&quot;headerlink&quot; title=&quot;證明 1&quot;&gt;&lt;/a&gt;證明 1&lt;/h2&gt;&lt;p&gt;令 $c = b \oplus a,$ $\because a &amp;lt; b$，$c$ 的最高位和 $b$ 的最高位皆為第 $k$ 位，&lt;br&gt;$\exists_{x_i\in X},SG(x_i)$ 的最高位為第 $k$ 位。&lt;br&gt;令 $d = c \oplus SG(x_i)$&lt;br&gt;$d &amp;lt; SG(x_i)$，根據定義我們知道，$\exists_{x_i’\in X’},SG(x_i’)=d$&lt;/p&gt;
+&lt;p&gt;$&lt;br&gt;SG(x_1)\oplus SG(x_2)\oplus …\oplus SG(x_i’)\oplus …\oplus SG(x_n) \\&lt;br&gt;=SG(x_1)\oplus SG(x_2)\oplus …\oplus d\oplus …\oplus SG(x_n) \\&lt;br&gt;=SG(x_1)\oplus SG(x_2)\oplus …\oplus (c \oplus SG(x_i))\oplus …\oplus SG(x_n) \\&lt;br&gt;=SG(x_1)\oplus SG(x_2)\oplus …\oplus ((b \oplus a) \oplus SG(x_i))\oplus …\oplus SG(x_n) \\&lt;br&gt;=b\oplus a\oplus b=a&lt;br&gt;$&lt;/p&gt;
+&lt;h2 id=&quot;證明-2&quot;&gt;&lt;a href=&quot;#證明-2&quot; class=&quot;headerlink&quot; title=&quot;證明 2&quot;&gt;&lt;/a&gt;證明 2&lt;/h2&gt;&lt;p&gt;利用反證法：&lt;/p&gt;
+&lt;p&gt;假設 $\exists_{X’\in S}SG(X’)=b$&lt;br&gt;又由定義得知$SG(x_i)\neq SG(x_i’),SG(x_i)\oplus SG(x_i’)=c\neq 0$&lt;/p&gt;
+&lt;p&gt;$&lt;br&gt;SG(x_1)\oplus SG(x_2)\oplus …\oplus SG(x_i’)\oplus …\oplus SG(x_n) \\&lt;br&gt;=SG(x_1)\oplus SG(x_2)\oplus …\oplus ((SG(x_i’)\oplus SG(x_i))\oplus SG(x_i))\oplus …\oplus SG(x_n) \\&lt;br&gt;=b\oplus c \neq b\rightarrow\leftarrow&lt;br&gt;$&lt;/p&gt;
+&lt;h1 id=&quot;例題&quot;&gt;&lt;a href=&quot;#例題&quot; class=&quot;headerlink&quot; title=&quot;例題&quot;&gt;&lt;/a&gt;例題&lt;/h1&gt;&lt;blockquote&gt;&lt;p&gt;There some Amoebas on the line with integer length and face to origin. A-Mi-Ba and B-Mi-Ba are playing with Amoebas in turns. A-Mi-Ba goes first.&lt;/p&gt;
+&lt;p&gt;The game is as following :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Skip this step or choose an Amoeba and cut it into two pieces. Each of piece will be a new Amoeba. The length of new Amoeba should be an integer. Both of them will face to origin.&lt;/li&gt;
+&lt;li&gt;Put a Yakeli-Food in front of one Amoeba in empty cell. The Amoeba will eat the Yakeli-Food and move one unit.&lt;/li&gt;
+&lt;li&gt;World Piece! The adjacent Amoebas will combine into one Amoeba.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The game ended when nobody can move. It means that there only one Amoeba and it’s head is in front of origin.&lt;/p&gt;
+&lt;p&gt;The loser is the player who can’t move. He will be eaten by the Amoeba! Can you tell them who will be the winner?&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Begin Status:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin| |O O O| | |O O O O O O| | | | | |O|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;End Status:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin|O O O O O O O O O O| | | | | | | | |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;footer&gt;&lt;strong&gt;NTUOJ A-Mi-Ba&lt;/strong&gt;&lt;/footer&gt;&lt;/blockquote&gt;
+&lt;h1 id=&quot;解法&quot;&gt;&lt;a href=&quot;#解法&quot; class=&quot;headerlink&quot; title=&quot;解法&quot;&gt;&lt;/a&gt;解法&lt;/h1&gt;&lt;p&gt;先拆解問題，發現可以對每隻阿米巴，處理「左方空白總數」和「阿米巴的長度」的子問題，把每個$SG_i(blank,length)xor$起來便是答案了。&lt;/p&gt;
+&lt;p&gt;又透過觀察發現當空白數量等於偶數時阿米巴的移動並不影響答案（移動偶數次答案不變），奇數時$SG(odd, l)=l$。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Latest Update: 2016-10-11 10:29:06&lt;/p&gt;
+&lt;p&gt;先思考一個簡單的問題：&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;場上有 $n$ 堆數量不一的石頭，&lt;a href=&quot;http://wikiwiki.jp/kancolle/?%B6%C7&quot;&gt;Akatsuki&lt;/a&gt; 和 &lt;a href=&quot;http://wikiwiki.jp/kancolle/?Bismarck&quot;&gt;Bismarck&lt;/a&gt; 分別為先手和後手，在他們各自的回合都能選擇從其中一堆拿走一顆以上的石頭，拿到最後一顆石頭者勝。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="記事" scheme="http://fsh0524.github.io/categories/%E8%A8%98%E4%BA%8B/"/>
+    
+    
+      <category term="Game theory" scheme="http://fsh0524.github.io/tags/Game-theory/"/>
+    
+  </entry>
   
   <entry>
     <title>NEERC 2009, Northern, Problem E. Enigmatic Device</title>
@@ -249,9 +322,9 @@
     <link href="http://fsh0524.github.io/2016/03/04/TIOJ-1264/"/>
     <id>http://fsh0524.github.io/2016/03/04/TIOJ-1264/</id>
     <published>2016-03-04T14:56:03.000Z</published>
-    <updated>2016-03-04T16:52:47.000Z</updated>
+    <updated>2016-10-10T23:09:56.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-03-05 12:52:47&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-10-11 07:09:56&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　在一個由 $n\times k$ 個單位正方形排成的矩形表格上，如果某兩個格子共用一個邊，那麼我們說這兩個格子相鄰。請寫一個程式計算出有多少種方法對表格的某些格子塗上黑色，使得這個表格上的每一個小格子，都恰有一個相鄰的格子被塗上黑色。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;Input-Format&quot;&gt;&lt;a href=&quot;#Input-Format&quot; class=&quot;headerlink&quot; title=&quot;Input Format&quot;&gt;&lt;/a&gt;Input Format&lt;/h1&gt;&lt;p&gt;　　包含兩個以空白隔開的整數 $n,k, (0&amp;lt;n&amp;lt;500,0&amp;lt;k&amp;lt;32)$。&lt;/p&gt;
@@ -266,7 +339,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-03-05 12:52:47&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-10-11 07:09:56&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　在一個由 $n\times k$ 個單位正方形排成的矩形表格上，如果某兩個格子共用一個邊，那麼我們說這兩個格子相鄰。請寫一個程式計算出有多少種方法對表格的某些格子塗上黑色，使得這個表格上的每一個小格子，都恰有一個相鄰的格子被塗上黑色。&lt;/p&gt;
     
     </summary>
@@ -275,8 +348,6 @@
     
     
       <category term="DFS" scheme="http://fsh0524.github.io/tags/DFS/"/>
-    
-      <category term="數學" scheme="http://fsh0524.github.io/tags/%E6%95%B8%E5%AD%B8/"/>
     
   </entry>
   
@@ -310,9 +381,9 @@
       <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
     
     
-      <category term="計算幾何" scheme="http://fsh0524.github.io/tags/%E8%A8%88%E7%AE%97%E5%B9%BE%E4%BD%95/"/>
-    
       <category term="DFS" scheme="http://fsh0524.github.io/tags/DFS/"/>
+    
+      <category term="計算幾何" scheme="http://fsh0524.github.io/tags/%E8%A8%88%E7%AE%97%E5%B9%BE%E4%BD%95/"/>
     
   </entry>
   
@@ -321,9 +392,9 @@
     <link href="http://fsh0524.github.io/2016/03/03/Articulation-Point/"/>
     <id>http://fsh0524.github.io/2016/03/03/Articulation-Point/</id>
     <published>2016-03-03T08:21:48.000Z</published>
-    <updated>2016-03-03T13:58:11.000Z</updated>
+    <updated>2016-10-10T23:10:20.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-03-03 09:58:11&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-10-11 07:10:20&lt;/p&gt;
 &lt;p&gt;　　Articulation Point，顧名思義即接合點（以下簡稱 AP）。定義即在一張無向圖上的某個點，該點滿足當點被從圖上移除後，圖會被分成兩個以上的連通分量。如是：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;/images/Articulation-Point/ArticulationPoints.png&quot; title=&quot;圖片來源：http://www.geeksforgeeks.org/&quot;&gt;&lt;br&gt;　　這時我們大略可以歸納出尋找 AP 的天真法：對每個點拔掉後 DFS。這是個很傻很天真的暴力作法，時間複雜度 $O(VE)$ 實在是太大了。為此 Tarjan 發明了一個基於 DFS Tree 的 $O(V+E)$ 做法。&lt;br&gt;&lt;img src=&quot;/images/Articulation-Point/dfs3.png&quot; title=&quot;圖片來源：http://sokoban.ws/&quot;&gt;&lt;br&gt;　　上圖中黑色的邊在此稱為「Tree Edge」，而紅色的邊則稱為「Back Edge」，點上的數字則是 DFS 的遍歷順序。由此我們可以發現兩件事：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;DFS Tree 的根節點有超過一條 Tree Edge 時，根節點必為 AP。&lt;/li&gt;
@@ -339,12 +410,12 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-03-03 09:58:11&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-10-11 07:10:20&lt;/p&gt;
 &lt;p&gt;　　Articulation Point，顧名思義即接合點（以下簡稱 AP）。定義即在一張無向圖上的某個點，該點滿足當點被從圖上移除後，圖會被分成兩個以上的連通分量。如是：&lt;br&gt;
     
     </summary>
     
-      <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
+      <category term="記事" scheme="http://fsh0524.github.io/categories/%E8%A8%98%E4%BA%8B/"/>
     
     
       <category term="Graph" scheme="http://fsh0524.github.io/tags/Graph/"/>

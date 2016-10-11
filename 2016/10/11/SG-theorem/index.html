@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="LaTeX,MathJax,Markdown,Hexo," />
+  <meta name="keywords" content="Game theory," />
 
 
 
@@ -59,22 +59,22 @@
 
 
 
-<meta name="description" content="Latest Update: 2016-03-03 09:52:32
-前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
-MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
+<meta name="description" content="Latest Update: 2016-10-11 10:29:06
+先思考一個簡單的問題：
+場上有 $n$ 堆數量不一的石頭，Akatsuki 和 Bismarck 分別為先手和後手，在他們各自的回合都能選擇從其中一堆拿走一顆以上的石頭，拿到最後一顆石頭者勝。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LaTeX 在 Hexo 中的使用">
-<meta property="og:url" content="http://fsh0524.github.io/2016/03/03/LaTeX-in-Hexo/index.html">
+<meta property="og:title" content="從 Nim 到 Sprague–Grundy 定理">
+<meta property="og:url" content="http://fsh0524.github.io/2016/10/11/SG-theorem/index.html">
 <meta property="og:site_name" content="野有蔓草">
-<meta property="og:description" content="Latest Update: 2016-03-03 09:52:32
-前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
-MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
-<meta property="og:updated_time" content="2016-03-03T01:52:32.000Z">
+<meta property="og:description" content="Latest Update: 2016-10-11 10:29:06
+先思考一個簡單的問題：
+場上有 $n$ 堆數量不一的石頭，Akatsuki 和 Bismarck 分別為先手和後手，在他們各自的回合都能選擇從其中一堆拿走一顆以上的石頭，拿到最後一顆石頭者勝。">
+<meta property="og:updated_time" content="2016-10-11T02:29:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LaTeX 在 Hexo 中的使用">
-<meta name="twitter:description" content="Latest Update: 2016-03-03 09:52:32
-前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
-MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
+<meta name="twitter:title" content="從 Nim 到 Sprague–Grundy 定理">
+<meta name="twitter:description" content="Latest Update: 2016-10-11 10:29:06
+先思考一個簡單的問題：
+場上有 $n$ 堆數量不一的石頭，Akatsuki 和 Bismarck 分別為先手和後手，在他們各自的回合都能選擇從其中一堆拿走一顆以上的石頭，拿到最後一顆石頭者勝。">
 
 
 
@@ -92,7 +92,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
   };
 </script>
 
-  <title> LaTeX 在 Hexo 中的使用 | 野有蔓草 </title>
+  <title> 從 Nim 到 Sprague–Grundy 定理 | 野有蔓草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -241,7 +241,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
             
             
               
-                LaTeX 在 Hexo 中的使用
+                從 Nim 到 Sprague–Grundy 定理
               
             
           </h1>
@@ -253,8 +253,8 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-03-03T08:22:13+08:00" content="2016-03-03">
-              2016-03-03
+            <time itemprop="dateCreated" datetime="2016-10-11T07:02:07+08:00" content="2016-10-11">
+              2016-10-11
             </time>
           </span>
 
@@ -283,8 +283,8 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/03/LaTeX-in-Hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/03/LaTeX-in-Hexo/" itemprop="commentsCount"></span>
+                <a href="/2016/10/11/SG-theorem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/11/SG-theorem/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -305,19 +305,54 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
       
 
       
-        <p>Latest Update: 2016-03-03 09:52:32</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　(╯°□°）╯︵ ┻━┻<br>　　昨天為了 <a href="https://www.mathjax.org/" target="_blank" rel="external">MathJax</a> 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a> 和 <a href="https://latex-project.org/" target="_blank" rel="external">LaTeX</a> 語法衝突的問題。</p>
-<h1 id="MathJax-插件"><a href="#MathJax-插件" class="headerlink" title="MathJax 插件"></a>MathJax 插件</h1><p>　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。<br><a id="more"></a><br>　　如果沒有的話，可以從下列指令安裝：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-math --save</span><br></pre></td></tr></table></figure></p>
-<h1 id="使用（LaTeX語法）"><a href="#使用（LaTeX語法）" class="headerlink" title="使用（LaTeX語法）"></a>使用（<a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics" target="_blank" rel="external">LaTeX語法</a>）</h1><h2 id="行內公式"><a href="#行內公式" class="headerlink" title="行內公式"></a>行內公式</h2><p>　　在公式前後加上 <code>$</code> 來添加行內數學公式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">行內公式 $\sin ^&#123; 2 &#125;&#123; \theta +\cos ^&#123; 2 &#125;&#123; \theta =1 &#125;  &#125;$ 行內公式</span><br></pre></td></tr></table></figure>
-<h3 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h3><p>行內公式 $\sin ^{ 2 }{ \theta +\cos ^{ 2 }{ \theta =1 }  }$ 行內公式</p>
-<h2 id="整行公式"><a href="#整行公式" class="headerlink" title="整行公式"></a>整行公式</h2><p>　　在公式前後加上 <code>$$</code> 來添加整行數學公式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac &#123; dy &#125;&#123; dx &#125; =\frac &#123; &#123; e &#125;^&#123; x &#125; &#125;&#123; 3&#123; y &#125;^&#123; 2 &#125; &#125;$$</span><br></pre></td></tr></table></figure>
-<h3 id="效果：-1"><a href="#效果：-1" class="headerlink" title="效果："></a>效果：</h3><p>$$\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }$$</p>
-<h1 id="與-Markdown-發生衝突"><a href="#與-Markdown-發生衝突" class="headerlink" title="與 Markdown 發生衝突"></a>與 Markdown 發生衝突</h1><p>　　有些狀況下，LaTeX 無法被正常渲染，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim _&#123; x\rightarrow \infty  &#125;&#123; \sum _&#123; k=1 &#125;^&#123; x &#125;&#123; \frac &#123; \sin &#123; k &#125; +\cos &#123; k &#125;  &#125;&#123; k &#125;  &#125;  &#125; $$</span><br></pre></td></tr></table></figure></p>
-<h3 id="效果：-2"><a href="#效果：-2" class="headerlink" title="效果："></a>效果：</h3><p>$$\lim <em>{ x\rightarrow \infty  }{ \sum </em>{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$</p>
-<p>　　這個公式是完全正確的，但卻無法成功地被渲染，仔細一看才發現 <code>{ x\rightarrow \infty  }{ \sum</code> 是斜體顯示的。<br>　　Markdown中 <code>_斜體_</code> 是<em>斜體</em>的語法，跳脫字元就能解決這個問題了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim \_&#123; x\rightarrow \infty  &#125;&#123; \sum \_&#123; k=1 &#125;^&#123; x &#125;&#123; \frac &#123; \sin &#123; k &#125; +\cos &#123; k &#125;  &#125;&#123; k &#125;  &#125;  &#125; $$</span><br></pre></td></tr></table></figure></p>
-<h3 id="效果：-3"><a href="#效果：-3" class="headerlink" title="效果："></a>效果：</h3><p>$$\lim _{ x\rightarrow \infty  }{ \sum _{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$</p>
+        <p>Latest Update: 2016-10-11 10:29:06</p>
+<p>先思考一個簡單的問題：</p>
+<blockquote><p>場上有 $n$ 堆數量不一的石頭，<a href="http://wikiwiki.jp/kancolle/?%B6%C7" target="_blank" rel="external">Akatsuki</a> 和 <a href="http://wikiwiki.jp/kancolle/?Bismarck" target="_blank" rel="external">Bismarck</a> 分別為先手和後手，在他們各自的回合都能選擇從其中一堆拿走一顆以上的石頭，拿到最後一顆石頭者勝。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="猜想"><a href="#猜想" class="headerlink" title="猜想"></a>猜想</h1><p>我們可以明確地知道，如果 $n = 1$，那麼 Akatsuki 必勝（她只要取走全部的石頭就贏了！）。那麼 $n$ 堆石頭的狀況呢？</p>
+<p>我們定義$\oplus$為$xor$運算，$X=\{x_1, x_2, …, x_i, …, x_n\} $ 為某個狀態 $SG(X) = x_1 \oplus x_2 \oplus … \oplus x_i \oplus … \oplus x_n$。</p>
+<p>當把狀態轉移為$SG(X ’ )=0$時 Bismarck 必勝，那麼存在必勝策略是讓$SG(X ’)$變為$0$，否則 Akatsuki 必勝。</p>
+<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><p>看到這裡，如果是不知道 Nim 的讀者一定很困惑我在寫三小。讓我們把問題再單純化：</p>
+<p>首先定義這個遊戲的雙方都可以做相同的選擇與操作，且都能看見對方的選擇與狀態的轉移。</p>
+<p>對於遊戲中的一個狀態 $x$（如一堆石頭），我們定義：</p>
+<ul>
+<li>如果 $x$ 無法被轉移到其他狀態，我們稱之為 $P-position$，$SG(x)=0$。</li>
+<li>如果 $x$ 可以被轉移到其他狀態，我們稱之為 $N-position$。<ul>
+<li>$x$ 可以被轉移到$S=\{x_1, x_2, …, x_n\}$集合上的任一狀態。</li>
+<li>$SG(x)=mex\{SG(x_1), SG(x_2), …, SG(x_n)\}$。</li>
+<li>$mex\{A\}$為不在$A$集合中的最小非負整數。</li>
+</ul>
+</li>
+</ul>
+<p>由此我們很清楚地知道開始狀態是$x$的遊戲中，$SG(x)&gt;0$表示先手必勝（必能使對方得到$P-position$），反之，後手必勝（先手就已經是$P-position$了）。</p>
+<h1 id="證明"><a href="#證明" class="headerlink" title="證明"></a>證明</h1><p>對於一個問題的狀態 $X$，可以被拆成很多個操作不互相干擾的、獨立的子問題 $X=\{x_1, x_2, …, x_i, …, x_n\}$。</p>
+<p>回到剛剛的 Nim，我們假設了$SG(X) = x_1 \oplus x_2 \oplus … \oplus x_i \oplus … \oplus x_n$，且當$SG(X)=0$時後手必勝，反之則先手必勝。</p>
+<p>在這裡我們先令$b = x_1 \oplus x_2 \oplus … \oplus x_i \oplus … \oplus x_n$。</p>
+<p>玩家在一個回合內可以選擇狀態中的第 $i$ 個子問題做一次操作，轉移成 $X_i’ =\{x_1, x_2, …, x_i ’, …, x_n\} $。</p>
+<p>那麼由上面$SG$函數的定義，令$S$為從$X$狀態轉移出來的集合，我們可以知道如果$b=SG(X)$：</p>
+<ol>
+<li>$\forall_{0\leq a&lt;b},\exists_{X’\in S},SG(X’) = a$</li>
+<li>$\forall_{X’\in S} SG(X’) \neq b$</li>
+</ol>
+<h2 id="證明-1"><a href="#證明-1" class="headerlink" title="證明 1"></a>證明 1</h2><p>令 $c = b \oplus a,$ $\because a &lt; b$，$c$ 的最高位和 $b$ 的最高位皆為第 $k$ 位，<br>$\exists_{x_i\in X},SG(x_i)$ 的最高位為第 $k$ 位。<br>令 $d = c \oplus SG(x_i)$<br>$d &lt; SG(x_i)$，根據定義我們知道，$\exists_{x_i’\in X’},SG(x_i’)=d$</p>
+<p>$<br>SG(x_1)\oplus SG(x_2)\oplus …\oplus SG(x_i’)\oplus …\oplus SG(x_n) \\<br>=SG(x_1)\oplus SG(x_2)\oplus …\oplus d\oplus …\oplus SG(x_n) \\<br>=SG(x_1)\oplus SG(x_2)\oplus …\oplus (c \oplus SG(x_i))\oplus …\oplus SG(x_n) \\<br>=SG(x_1)\oplus SG(x_2)\oplus …\oplus ((b \oplus a) \oplus SG(x_i))\oplus …\oplus SG(x_n) \\<br>=b\oplus a\oplus b=a<br>$</p>
+<h2 id="證明-2"><a href="#證明-2" class="headerlink" title="證明 2"></a>證明 2</h2><p>利用反證法：</p>
+<p>假設 $\exists_{X’\in S}SG(X’)=b$<br>又由定義得知$SG(x_i)\neq SG(x_i’),SG(x_i)\oplus SG(x_i’)=c\neq 0$</p>
+<p>$<br>SG(x_1)\oplus SG(x_2)\oplus …\oplus SG(x_i’)\oplus …\oplus SG(x_n) \\<br>=SG(x_1)\oplus SG(x_2)\oplus …\oplus ((SG(x_i’)\oplus SG(x_i))\oplus SG(x_i))\oplus …\oplus SG(x_n) \\<br>=b\oplus c \neq b\rightarrow\leftarrow<br>$</p>
+<h1 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h1><blockquote><p>There some Amoebas on the line with integer length and face to origin. A-Mi-Ba and B-Mi-Ba are playing with Amoebas in turns. A-Mi-Ba goes first.</p>
+<p>The game is as following :</p>
+<ol>
+<li>Skip this step or choose an Amoeba and cut it into two pieces. Each of piece will be a new Amoeba. The length of new Amoeba should be an integer. Both of them will face to origin.</li>
+<li>Put a Yakeli-Food in front of one Amoeba in empty cell. The Amoeba will eat the Yakeli-Food and move one unit.</li>
+<li>World Piece! The adjacent Amoebas will combine into one Amoeba.</li>
+</ol>
+<p>The game ended when nobody can move. It means that there only one Amoeba and it’s head is in front of origin.</p>
+<p>The loser is the player who can’t move. He will be eaten by the Amoeba! Can you tell them who will be the winner?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Begin Status:</span><br><span class="line">      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">origin| |O O O| | |O O O O O O| | | | | |O|</span><br><span class="line">      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">End Status:</span><br><span class="line">      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">origin|O O O O O O O O O O| | | | | | | | |</span><br><span class="line">      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></pre></td></tr></table></figure>
+<footer><strong>NTUOJ A-Mi-Ba</strong></footer></blockquote>
+<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>先拆解問題，發現可以對每隻阿米巴，處理「左方空白總數」和「阿米巴的長度」的子問題，把每個$SG_i(blank,length)xor$起來便是答案了。</p>
+<p>又透過觀察發現當空白數量等於偶數時阿米巴的移動並不影響答案（移動偶數次答案不變），奇數時$SG(odd, l)=l$。</p>
 
       
     </div>
@@ -326,13 +361,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
       
         <div class="post-tags">
           
-            <a href="/tags/LaTeX/" rel="tag">#LaTeX</a>
-          
-            <a href="/tags/MathJax/" rel="tag">#MathJax</a>
-          
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
-          
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+            <a href="/tags/Game-theory/" rel="tag">#Game theory</a>
           
         </div>
       
@@ -341,17 +370,13 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/02/TIOJ-1007/" rel="next" title="TIOJ 1007 . 燈泡問題">
-                <i class="fa fa-chevron-left"></i> TIOJ 1007 . 燈泡問題
+              <a href="/2016/10/09/NEERC-Northern-2009-E/" rel="next" title="NEERC 2009, Northern, Problem E. Enigmatic Device">
+                <i class="fa fa-chevron-left"></i> NEERC 2009, Northern, Problem E. Enigmatic Device
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/03/TIOJ-1008/" rel="prev" title="TIOJ 1008 . 量杯問題">
-                TIOJ 1008 . 量杯問題 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,7 +537,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MathJax-插件"><span class="nav-number">2.</span> <span class="nav-text">MathJax 插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用（LaTeX語法）"><span class="nav-number">3.</span> <span class="nav-text">使用（LaTeX語法）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行內公式"><span class="nav-number">3.1.</span> <span class="nav-text">行內公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果："><span class="nav-number">3.1.1.</span> <span class="nav-text">效果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整行公式"><span class="nav-number">3.2.</span> <span class="nav-text">整行公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果：-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">效果：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#與-Markdown-發生衝突"><span class="nav-number">4.</span> <span class="nav-text">與 Markdown 發生衝突</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果：-2"><span class="nav-number">4.0.1.</span> <span class="nav-text">效果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果：-3"><span class="nav-number">4.0.2.</span> <span class="nav-text">效果：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#猜想"><span class="nav-number">1.</span> <span class="nav-text">猜想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思考"><span class="nav-number">2.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#證明"><span class="nav-number">3.</span> <span class="nav-text">證明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#證明-1"><span class="nav-number">3.1.</span> <span class="nav-text">證明 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#證明-2"><span class="nav-number">3.2.</span> <span class="nav-text">證明 2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例題"><span class="nav-number">4.</span> <span class="nav-text">例題</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解法"><span class="nav-number">5.</span> <span class="nav-text">解法</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -770,9 +795,9 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
 
     <script type="text/javascript">
       var disqus_shortname = 'fsh0524';
-      var disqus_identifier = '2016/03/03/LaTeX-in-Hexo/';
-      var disqus_title = 'LaTeX 在 Hexo 中的使用';
-      var disqus_url = 'http://fsh0524.github.io/2016/03/03/LaTeX-in-Hexo/';
+      var disqus_identifier = '2016/10/11/SG-theorem/';
+      var disqus_title = '從 Nim 到 Sprague–Grundy 定理';
+      var disqus_url = 'http://fsh0524.github.io/2016/10/11/SG-theorem/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
