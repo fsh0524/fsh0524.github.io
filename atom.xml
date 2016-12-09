@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fsh0524.github.io/"/>
-  <updated>2016-10-11T02:29:06.000Z</updated>
+  <updated>2016-12-09T23:04:26.000Z</updated>
   <id>http://fsh0524.github.io/</id>
   
   <author>
@@ -16,13 +16,60 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>TIOJ 1920 . 植物大戰殭屍</title>
+    <link href="http://fsh0524.github.io/2016/12/10/TIOJ-1920/"/>
+    <id>http://fsh0524.github.io/2016/12/10/TIOJ-1920/</id>
+    <published>2016-12-09T21:58:12.000Z</published>
+    <updated>2016-12-09T23:04:26.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Latest Update: 2016-12-10 07:04:26&lt;/p&gt;
+&lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;你玩過植物大戰殭屍嗎？&lt;br&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/zh/9/95/PVZ.jpg&quot; title=&quot;植物大戰殭屍——遊戲畫面&quot;&gt;&lt;br&gt;這是一款用植物打趴殭屍的熱門遊戲，已經紅了一段時間了。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在遊戲中，不同的植物可能相互作用，產生類似「合體技」的功能。這題的主要目標就是探討如何安排這些植物才能達到最大的攻擊力。為了簡化問題，我們只考慮只有一個殭屍以及田地只有一列的情況。&lt;/p&gt;
+&lt;p&gt;一列有$N$格的田地由左至右編號為$0,1,…,N−1$，每格田地的肥沃度是$a_i$。共有$Q$個關卡，而且每一個關卡都只有一個殭屍，並且進行的場地(也就是你能種植物的地方)是$N$格田地中的某一個區間$[L,R)$。而在每一關，你只有一個工具可以用：播種機。這是一個一次性道具，使用方法就是把他放在某一格落在區間內的田地，之後他會開始往右開，並且在所經過的田地都種下一顆種子(含起點)。播種完(也就是超過編號$R$的田地)之後，還會直接輾過殭屍造成一定的傷害。而對於某個已種下種子且肥沃度是$a_i$的格子，過了一小段時間之後就會長出「特徵值」是$a_i$的植物。所種出的植物會發動合體技，產生一顆種子子彈。這顆種子子彈的特徵值就是將所有植物的特徵值$xor$起來後的結果，並且這顆種子子彈會筆直地朝殭屍射過去，造成傷害。傷害的計算方法也非常容易，就是將種子子彈的特徵值和殭屍的特徵值$v$ $xor$後得到的結果。&lt;/p&gt;
+&lt;p&gt;對於給定的$Q$個關卡，請計算你能造成的最大傷害。&lt;/p&gt;
+&lt;h1 id=&quot;Input-Format&quot;&gt;&lt;a href=&quot;#Input-Format&quot; class=&quot;headerlink&quot; title=&quot;Input Format&quot;&gt;&lt;/a&gt;Input Format&lt;/h1&gt;&lt;p&gt;第一行有兩個正整數$N\le {10}^{4},Q\le {10}^{6}$，分別代表田地大小以及關卡數目。&lt;br&gt;第二行有$N$個整數$0\le a_0,a_1,…,{a}_{N−1}&amp;lt;{2}^{30}$，代表每格田地的肥沃度。&lt;br&gt;接下來的$Q$中每行會有三個非負整數$L_i,R_i\le N,v&amp;lt;{2}^{30}$（$L_i&amp;lt;R_i$），分別代表關卡進行場地的左右界以及殭屍的特徵值。&lt;/p&gt;
+&lt;h1 id=&quot;Output-Format&quot;&gt;&lt;a href=&quot;#Output-Format&quot; class=&quot;headerlink&quot; title=&quot;Output Format&quot;&gt;&lt;/a&gt;Output Format&lt;/h1&gt;&lt;p&gt;對於每個關卡，請輸出能造成的傷害最大值。&lt;/p&gt;
+&lt;h1 id=&quot;Sample-Input&quot;&gt;&lt;a href=&quot;#Sample-Input&quot; class=&quot;headerlink&quot; title=&quot;Sample Input&quot;&gt;&lt;/a&gt;Sample Input&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;4 2 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 2 1 3 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0 3 3 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2 4 1 &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;Sample-Output&quot;&gt;&lt;a href=&quot;#Sample-Output&quot; class=&quot;headerlink&quot; title=&quot;Sample Output&quot;&gt;&lt;/a&gt;Sample Output&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;2 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;footer&gt;&lt;strong&gt;TIOJ&lt;/strong&gt;&lt;cite&gt;&lt;a href=&quot;http://tioj.infor.org/problems/1920&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;1920&lt;/a&gt;&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
+&lt;h1 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h1&gt;&lt;p&gt;題目的每筆詢問要求最大化$a_k\oplus {a}_{k+1}\oplus …\oplus {a}_{R_i}\oplus v_i$，對於$L_i\le k&amp;lt;R_i$。&lt;/p&gt;
+&lt;p&gt;我們可以先預處理序列的後綴$xor$值——即$S_j=a_j\oplus {a}_{j+1}\oplus …\oplus {a}_{N-1}$——方便我們能夠$\O(1)$取得一段連續區間的$xor$值。&lt;/p&gt;
+&lt;p&gt;那麼問題就變成找到一個$k\in[L_i, R_i)$，最大化${Ans}_{i}=S_k\oplus {S}_{R_i\oplus v_i}$。&lt;/p&gt;
+&lt;p&gt;但直接枚舉$k$太慢了（最糟糕會變成$\O(NQ)$），在這裡我們用到一種稱為 Trie（前綴樹）的資料結構來存取「特徵值」的二進制值。&lt;br&gt;&lt;img class=&quot;images/TIOJ-1920/0.png 圖中將鍵標記在節點上只是為了方便學習與思考，實作時鍵通常不會被顯式地保存在節點中&quot;&gt;&lt;br&gt;對二進制值的字典序作排序，第一層存第30位，第二層存第29位，以此類推。&lt;/p&gt;
+&lt;p&gt;而現在我們只要維護 $N$ 棵 Trie，並把節點的值改成他底下最小的 index（為 S 的第幾個元素，用在限制右界時作為搜索的節點限制）。在尋找 $S_k$ 時，從上面（高維度）往下（低維度）搜索，儘量選擇和 ${S}_{R_i\oplus v_i}$ 長得不一樣的位元，這樣貪婪的做法是正確的。（和比大小一樣，越高維度有 1 表示一定是比較大的數字，又 $xor$ 想要得到 $1$ 就要兩個位元不同才行）&lt;/p&gt;
+&lt;p&gt;但我們很快地就發現維護 $N$ 棵 Trie 是絕對會 MLE 的，為此我們需要持久化該資料結構。&lt;br&gt;我用指標實作，這樣一來當一棵新樹使用到舊版本的子樹時，只要把舊版本的該子樹連到不會被更新到的節點即可。&lt;/p&gt;
+&lt;h1 id=&quot;Code&quot;&gt;&lt;a href=&quot;#Code&quot; class=&quot;headerlink&quot; title=&quot;Code&quot;&gt;&lt;/a&gt;Code&lt;/h1&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;define&lt;/span&gt; F(n) Fi(i,n)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;define&lt;/span&gt; Fi(i,n) Fl(i,0,n)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;define&lt;/span&gt; Fl(i,l,n) for(int i=l;i&amp;lt;n;++i)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;define&lt;/span&gt; MAXN 10005&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;define&lt;/span&gt; endl &lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; Trie &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Trie(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; _val = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, Trie *_src = &lt;span class=&quot;literal&quot;&gt;nullptr&lt;/span&gt;) : rb(_val) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (_src) ch[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = _src-&amp;gt;ch[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;], ch[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = _src-&amp;gt;ch[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; ch[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = ch[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = &lt;span class=&quot;literal&quot;&gt;nullptr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; rb;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Trie *ch[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; *root[MAXN];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pos, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; val)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	root[pos] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Trie(pos, root[pos + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Trie *my = root[pos], *src = root[pos + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; side;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;29&lt;/span&gt; ; i &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ; --i) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		side = val &amp;gt;&amp;gt; i &amp;amp; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		my-&amp;gt;ch[side] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Trie(pos, src ? src-&amp;gt;ch[side] : src);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		my = my-&amp;gt;ch[side];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (src) src = src-&amp;gt;ch[side];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pos, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; val, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; lim)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Trie *my = root[pos];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; side, ans = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;29&lt;/span&gt; ; i &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ; --i) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		ans &amp;lt;&amp;lt;= &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		side = val &amp;gt;&amp;gt; i &amp;amp; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (my-&amp;gt;ch[!side] &amp;amp;&amp;amp; my-&amp;gt;ch[!side]-&amp;gt;rb &amp;lt; lim) ans |= !side, my = my-&amp;gt;ch[!side];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; ans |= side, my = my-&amp;gt;ch[side];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; ans ^ val;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; s[MAXN];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;main() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	ios_base::sync_with_stdio(&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;cin&lt;/span&gt;.tie(&lt;span class=&quot;literal&quot;&gt;NULL&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; n, q, l, r, v;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;cin&lt;/span&gt; &amp;gt;&amp;gt; n &amp;gt;&amp;gt; q;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	F(n) &lt;span class=&quot;built_in&quot;&gt;cin&lt;/span&gt; &amp;gt;&amp;gt; s[i];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = n - &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; ; i &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ; --i)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		s[i] ^= s[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	root[n] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Trie(n);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = n&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt; ; i &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ; --i)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		insert(i, s[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (q--) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;cin&lt;/span&gt; &amp;gt;&amp;gt; l &amp;gt;&amp;gt; r &amp;gt;&amp;gt; v;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt; &amp;lt;&amp;lt; query(l, s[r] ^ v, r) &amp;lt;&amp;lt; &lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Latest Update: 2016-12-10 07:04:26&lt;/p&gt;
+&lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;你玩過植物大戰殭屍嗎？&lt;br&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/zh/9/95/PVZ.jpg&quot; title=&quot;植物大戰殭屍——遊戲畫面&quot;&gt;&lt;br&gt;這是一款用植物打趴殭屍的熱門遊戲，已經紅了一段時間了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
+    
+    
+      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
+    
+      <category term="Trie" scheme="http://fsh0524.github.io/tags/Trie/"/>
+    
+      <category term="持久化" scheme="http://fsh0524.github.io/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    
+      <category term="RMQ" scheme="http://fsh0524.github.io/tags/RMQ/"/>
+    
+  </entry>
+  
+  <entry>
     <title>從 Nim 到 Sprague–Grundy 定理</title>
     <link href="http://fsh0524.github.io/2016/10/11/SG-theorem/"/>
     <id>http://fsh0524.github.io/2016/10/11/SG-theorem/</id>
     <published>2016-10-10T23:02:07.000Z</published>
-    <updated>2016-10-11T02:29:06.000Z</updated>
+    <updated>2016-12-09T21:59:35.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-10-11 10:29:06&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-12-10 05:59:35&lt;/p&gt;
 &lt;p&gt;先思考一個簡單的問題：&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;場上有 $n$ 堆數量不一的石頭，&lt;a href=&quot;http://wikiwiki.jp/kancolle/?%B6%C7&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Akatsuki&lt;/a&gt; 和 &lt;a href=&quot;http://wikiwiki.jp/kancolle/?Bismarck&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bismarck&lt;/a&gt; 分別為先手和後手，在他們各自的回合都能選擇從其中一堆拿走一顆以上的石頭，拿到最後一顆石頭者勝。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -74,7 +121,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-10-11 10:29:06&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-12-10 05:59:35&lt;/p&gt;
 &lt;p&gt;先思考一個簡單的問題：&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;場上有 $n$ 堆數量不一的石頭，&lt;a href=&quot;http://wikiwiki.jp/kancolle/?%B6%C7&quot;&gt;Akatsuki&lt;/a&gt; 和 &lt;a href=&quot;http://wikiwiki.jp/kancolle/?Bismarck&quot;&gt;Bismarck&lt;/a&gt; 分別為先手和後手，在他們各自的回合都能選擇從其中一堆拿走一顆以上的石頭，拿到最後一顆石頭者勝。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -84,7 +131,7 @@
       <category term="記事" scheme="http://fsh0524.github.io/categories/%E8%A8%98%E4%BA%8B/"/>
     
     
-      <category term="Game theory" scheme="http://fsh0524.github.io/tags/Game-theory/"/>
+      <category term="CGT" scheme="http://fsh0524.github.io/tags/CGT/"/>
     
   </entry>
   
@@ -248,9 +295,9 @@
     <link href="http://fsh0524.github.io/2016/03/04/TIOJ-1266/"/>
     <id>http://fsh0524.github.io/2016/03/04/TIOJ-1266/</id>
     <published>2016-03-04T15:53:29.000Z</published>
-    <updated>2016-03-04T17:48:35.000Z</updated>
+    <updated>2016-12-09T22:22:58.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-03-05 01:48:35&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-12-10 06:22:58&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　在贏得世上所有的資訊競賽後，Peter Hacker開始想要嘗試新的挑戰。因此他在俄羅斯的密碼學線上競賽中以”VerhShifr”為隊名報名了，並且很快的晉級到了在莫斯科的決賽。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;　　在主辦單位主辦的參訪活動中，他們參觀了俄羅斯娃娃博物館。這個博物館中有非常多奇怪的迷宮。迷宮中都是方型的，而且牆壁都是南北向或東西向。每個展場的四個方向都有個門，博物館的最西北方是入口，最東南方則是出口。&lt;br&gt;　　俄羅斯的國手隊準備了有趣的遊戲和他們的對手玩。他們在每間房間放了一個獨特大小的俄羅斯娃娃。每個人必須要走過迷宮，並且收集盡可能多的娃娃，將他們一個一個裝起來。當然參賽者可以決定是否要拿某個房間的娃娃(當然要可以包住你手上最後拿的)或直接繼續往前走。&lt;br&gt;　　為了增加難度，一個裁判將每間房間改成只能從東方跟南方出去。Peter當然也對這些限制非常的苦惱。因此他寫了一個可以找到最佳路的程式。&lt;br&gt;　　現在請問你是否也能寫出這個程式呢？給你每個房間的娃娃大小，請你寫一個程式去計算最多可以拿到幾個娃娃。&lt;/p&gt;
@@ -270,13 +317,15 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-03-05 01:48:35&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-12-10 06:22:58&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　在贏得世上所有的資訊競賽後，Peter Hacker開始想要嘗試新的挑戰。因此他在俄羅斯的密碼學線上競賽中以”VerhShifr”為隊名報名了，並且很快的晉級到了在莫斯科的決賽。&lt;/p&gt;
     
     </summary>
     
       <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
     
+    
+      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
     
       <category term="樹狀數組" scheme="http://fsh0524.github.io/tags/%E6%A8%B9%E7%8B%80%E6%95%B8%E7%B5%84/"/>
     
@@ -287,9 +336,9 @@
     <link href="http://fsh0524.github.io/2016/03/04/TIOJ-1265/"/>
     <id>http://fsh0524.github.io/2016/03/04/TIOJ-1265/</id>
     <published>2016-03-04T15:01:23.000Z</published>
-    <updated>2016-03-04T17:44:14.000Z</updated>
+    <updated>2016-12-09T22:22:29.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-03-05 01:44:14&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-12-10 06:22:29&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　想像一下，有一張保加利亞的桌子(&lt;em&gt;table&lt;/em&gt;)，被分成了三列四行的小區塊。每一個區塊上都有一個獨一無二的正整數。我們說這張桌子上的整數被「正確地」安置時，代表每一橫列的數字和都是偶數，而且每個直行的數字和都是三的倍數。顯然地，若我們交換任意的兩列、或者是兩行，仍然保持這些整數安置的正確性。例如下圖所示的三個排列經過交換行列其實都是一樣的，於是它們屬於同一種安置方法。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;img src=&quot;/images/TIOJ-1265/1265_1.gif&quot;&gt;&lt;br&gt;　　給你十二個正整數，請問有多少種正確但不同的安置方法呢？&lt;/p&gt;
@@ -305,13 +354,15 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-03-05 01:44:14&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-12-10 06:22:29&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　想像一下，有一張保加利亞的桌子(&lt;em&gt;table&lt;/em&gt;)，被分成了三列四行的小區塊。每一個區塊上都有一個獨一無二的正整數。我們說這張桌子上的整數被「正確地」安置時，代表每一橫列的數字和都是偶數，而且每個直行的數字和都是三的倍數。顯然地，若我們交換任意的兩列、或者是兩行，仍然保持這些整數安置的正確性。例如下圖所示的三個排列經過交換行列其實都是一樣的，於是它們屬於同一種安置方法。&lt;/p&gt;
     
     </summary>
     
       <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
     
+    
+      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
     
       <category term="DFS" scheme="http://fsh0524.github.io/tags/DFS/"/>
     
@@ -322,9 +373,9 @@
     <link href="http://fsh0524.github.io/2016/03/04/TIOJ-1264/"/>
     <id>http://fsh0524.github.io/2016/03/04/TIOJ-1264/</id>
     <published>2016-03-04T14:56:03.000Z</published>
-    <updated>2016-10-10T23:09:56.000Z</updated>
+    <updated>2016-12-09T22:22:31.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-10-11 07:09:56&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-12-10 06:22:31&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　在一個由 $n\times k$ 個單位正方形排成的矩形表格上，如果某兩個格子共用一個邊，那麼我們說這兩個格子相鄰。請寫一個程式計算出有多少種方法對表格的某些格子塗上黑色，使得這個表格上的每一個小格子，都恰有一個相鄰的格子被塗上黑色。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;Input-Format&quot;&gt;&lt;a href=&quot;#Input-Format&quot; class=&quot;headerlink&quot; title=&quot;Input Format&quot;&gt;&lt;/a&gt;Input Format&lt;/h1&gt;&lt;p&gt;　　包含兩個以空白隔開的整數 $n,k, (0&amp;lt;n&amp;lt;500,0&amp;lt;k&amp;lt;32)$。&lt;/p&gt;
@@ -339,13 +390,15 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-10-11 07:09:56&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-12-10 06:22:31&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　在一個由 $n\times k$ 個單位正方形排成的矩形表格上，如果某兩個格子共用一個邊，那麼我們說這兩個格子相鄰。請寫一個程式計算出有多少種方法對表格的某些格子塗上黑色，使得這個表格上的每一個小格子，都恰有一個相鄰的格子被塗上黑色。&lt;/p&gt;
     
     </summary>
     
       <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
     
+    
+      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
     
       <category term="DFS" scheme="http://fsh0524.github.io/tags/DFS/"/>
     
@@ -356,9 +409,9 @@
     <link href="http://fsh0524.github.io/2016/03/04/TIOJ-1263/"/>
     <id>http://fsh0524.github.io/2016/03/04/TIOJ-1263/</id>
     <published>2016-03-04T14:46:27.000Z</published>
-    <updated>2016-03-04T15:02:12.000Z</updated>
+    <updated>2016-12-09T22:22:32.000Z</updated>
     
-    <content type="html">&lt;p&gt;Latest Update: 2016-03-04 11:02:12&lt;/p&gt;
+    <content type="html">&lt;p&gt;Latest Update: 2016-12-10 06:22:32&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　保加利亞的多邊形是很特別的，它們都是凸多邊形，而且都恰好有$K$個邊。給定平面上的 $N$ 個相異位置的點，而且不會有三個點共線的情形。&lt;br&gt;　　請找出以其中$K$個頂點所圍成的保加利亞多邊形之最小面積。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;Input-Format&quot;&gt;&lt;a href=&quot;#Input-Format&quot; class=&quot;headerlink&quot; title=&quot;Input Format&quot;&gt;&lt;/a&gt;Input Format&lt;/h1&gt;&lt;p&gt;　　第一列有兩個整數 $N,K,\left( 0&amp;lt;N&amp;lt;50,0&amp;lt;K&amp;lt;11 \right) $。&lt;br&gt;　　接下來有$N$列每列有兩個整數描述一個點的座標。所有點的座標值都是非負整數，並且不超過$9999$。&lt;/p&gt;
@@ -373,7 +426,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Latest Update: 2016-03-04 11:02:12&lt;/p&gt;
+      &lt;p&gt;Latest Update: 2016-12-10 06:22:32&lt;/p&gt;
 &lt;blockquote&gt;&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;　　保加利亞的多邊形是很特別的，它們都是凸多邊形，而且都恰好有$K$個邊。給定平面上的 $N$ 個相異位置的點，而且不會有三個點共線的情形。&lt;br&gt;　　請找出以其中$K$個頂點所圍成的保加利亞多邊形之最小面積。&lt;/p&gt;
     
     </summary>
@@ -381,9 +434,11 @@
       <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
     
     
-      <category term="DFS" scheme="http://fsh0524.github.io/tags/DFS/"/>
+      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
     
       <category term="計算幾何" scheme="http://fsh0524.github.io/tags/%E8%A8%88%E7%AE%97%E5%B9%BE%E4%BD%95/"/>
+    
+      <category term="DFS" scheme="http://fsh0524.github.io/tags/DFS/"/>
     
   </entry>
   
@@ -504,11 +559,11 @@
       <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
     
     
-      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
-    
       <category term="SPP" scheme="http://fsh0524.github.io/tags/SPP/"/>
     
       <category term="Binary Tree" scheme="http://fsh0524.github.io/tags/Binary-Tree/"/>
+    
+      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
     
   </entry>
   

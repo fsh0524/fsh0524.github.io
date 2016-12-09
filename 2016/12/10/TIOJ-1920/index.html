@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="LaTeX,MathJax,Markdown,Hexo," />
+  <meta name="keywords" content="TIOJ,Trie,持久化,RMQ," />
 
 
 
@@ -59,22 +59,21 @@
 
 
 
-<meta name="description" content="Latest Update: 2016-03-03 09:52:32
-前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
-MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
+<meta name="description" content="Latest Update: 2016-12-10 07:04:26
+Description你玩過植物大戰殭屍嗎？這是一款用植物打趴殭屍的熱門遊戲，已經紅了一段時間了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LaTeX 在 Hexo 中的使用">
-<meta property="og:url" content="http://fsh0524.github.io/2016/03/03/LaTeX-in-Hexo/index.html">
+<meta property="og:title" content="TIOJ 1920 . 植物大戰殭屍">
+<meta property="og:url" content="http://fsh0524.github.io/2016/12/10/TIOJ-1920/index.html">
 <meta property="og:site_name" content="野有蔓草">
-<meta property="og:description" content="Latest Update: 2016-03-03 09:52:32
-前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
-MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
-<meta property="og:updated_time" content="2016-03-03T01:52:32.000Z">
+<meta property="og:description" content="Latest Update: 2016-12-10 07:04:26
+Description你玩過植物大戰殭屍嗎？這是一款用植物打趴殭屍的熱門遊戲，已經紅了一段時間了。">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/zh/9/95/PVZ.jpg">
+<meta property="og:updated_time" content="2016-12-09T23:04:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LaTeX 在 Hexo 中的使用">
-<meta name="twitter:description" content="Latest Update: 2016-03-03 09:52:32
-前言　　(╯°□°）╯︵ ┻━┻　　昨天為了 MathJax 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 Markdown 和 LaTeX 語法衝突的問題。
-MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。">
+<meta name="twitter:title" content="TIOJ 1920 . 植物大戰殭屍">
+<meta name="twitter:description" content="Latest Update: 2016-12-10 07:04:26
+Description你玩過植物大戰殭屍嗎？這是一款用植物打趴殭屍的熱門遊戲，已經紅了一段時間了。">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/zh/9/95/PVZ.jpg">
 
 
 
@@ -92,7 +91,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
   };
 </script>
 
-  <title> LaTeX 在 Hexo 中的使用 | 野有蔓草 </title>
+  <title> TIOJ 1920 . 植物大戰殭屍 | 野有蔓草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -241,7 +240,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
             
             
               
-                LaTeX 在 Hexo 中的使用
+                TIOJ 1920 . 植物大戰殭屍
               
             
           </h1>
@@ -253,8 +252,8 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-03-03T08:22:13+08:00" content="2016-03-03">
-              2016-03-03
+            <time itemprop="dateCreated" datetime="2016-12-10T05:58:12+08:00" content="2016-12-10">
+              2016-12-10
             </time>
           </span>
 
@@ -267,8 +266,8 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
               <span class="post-meta-item-text">分類於</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/記事/" itemprop="url" rel="index">
-                    <span itemprop="name">記事</span>
+                  <a href="/categories/題解/" itemprop="url" rel="index">
+                    <span itemprop="name">題解</span>
                   </a>
                 </span>
 
@@ -283,8 +282,8 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/03/LaTeX-in-Hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/03/LaTeX-in-Hexo/" itemprop="commentsCount"></span>
+                <a href="/2016/12/10/TIOJ-1920/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/10/TIOJ-1920/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -305,19 +304,24 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
       
 
       
-        <p>Latest Update: 2016-03-03 09:52:32</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　(╯°□°）╯︵ ┻━┻<br>　　昨天為了 <a href="https://www.mathjax.org/" target="_blank" rel="external">MathJax</a> 數學公式無法正常顯示的狀況搞了一整晚，最後才發現是 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a> 和 <a href="https://latex-project.org/" target="_blank" rel="external">LaTeX</a> 語法衝突的問題。</p>
-<h1 id="MathJax-插件"><a href="#MathJax-插件" class="headerlink" title="MathJax 插件"></a>MathJax 插件</h1><p>　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT 主題。<br><a id="more"></a><br>　　如果沒有的話，可以從下列指令安裝：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-math --save</span><br></pre></td></tr></table></figure></p>
-<h1 id="使用（LaTeX語法）"><a href="#使用（LaTeX語法）" class="headerlink" title="使用（LaTeX語法）"></a>使用（<a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics" target="_blank" rel="external">LaTeX語法</a>）</h1><h2 id="行內公式"><a href="#行內公式" class="headerlink" title="行內公式"></a>行內公式</h2><p>　　在公式前後加上 <code>$</code> 來添加行內數學公式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">行內公式 $\sin ^&#123; 2 &#125;&#123; \theta +\cos ^&#123; 2 &#125;&#123; \theta =1 &#125;  &#125;$ 行內公式</span><br></pre></td></tr></table></figure>
-<h3 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h3><p>行內公式 $\sin ^{ 2 }{ \theta +\cos ^{ 2 }{ \theta =1 }  }$ 行內公式</p>
-<h2 id="整行公式"><a href="#整行公式" class="headerlink" title="整行公式"></a>整行公式</h2><p>　　在公式前後加上 <code>$$</code> 來添加整行數學公式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac &#123; dy &#125;&#123; dx &#125; =\frac &#123; &#123; e &#125;^&#123; x &#125; &#125;&#123; 3&#123; y &#125;^&#123; 2 &#125; &#125;$$</span><br></pre></td></tr></table></figure>
-<h3 id="效果：-1"><a href="#效果：-1" class="headerlink" title="效果："></a>效果：</h3><p>$$\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }$$</p>
-<h1 id="與-Markdown-發生衝突"><a href="#與-Markdown-發生衝突" class="headerlink" title="與 Markdown 發生衝突"></a>與 Markdown 發生衝突</h1><p>　　有些狀況下，LaTeX 無法被正常渲染，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim _&#123; x\rightarrow \infty  &#125;&#123; \sum _&#123; k=1 &#125;^&#123; x &#125;&#123; \frac &#123; \sin &#123; k &#125; +\cos &#123; k &#125;  &#125;&#123; k &#125;  &#125;  &#125; $$</span><br></pre></td></tr></table></figure></p>
-<h3 id="效果：-2"><a href="#效果：-2" class="headerlink" title="效果："></a>效果：</h3><p>$$\lim <em>{ x\rightarrow \infty  }{ \sum </em>{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$</p>
-<p>　　這個公式是完全正確的，但卻無法成功地被渲染，仔細一看才發現 <code>{ x\rightarrow \infty  }{ \sum</code> 是斜體顯示的。<br>　　Markdown中 <code>_斜體_</code> 是<em>斜體</em>的語法，跳脫字元就能解決這個問題了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim \_&#123; x\rightarrow \infty  &#125;&#123; \sum \_&#123; k=1 &#125;^&#123; x &#125;&#123; \frac &#123; \sin &#123; k &#125; +\cos &#123; k &#125;  &#125;&#123; k &#125;  &#125;  &#125; $$</span><br></pre></td></tr></table></figure></p>
-<h3 id="效果：-3"><a href="#效果：-3" class="headerlink" title="效果："></a>效果：</h3><p>$$\lim _{ x\rightarrow \infty  }{ \sum _{ k=1 }^{ x }{ \frac { \sin { k } +\cos { k }  }{ k }  }  } $$</p>
+        <p>Latest Update: 2016-12-10 07:04:26</p>
+<blockquote><h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>你玩過植物大戰殭屍嗎？<br><img src="https://upload.wikimedia.org/wikipedia/zh/9/95/PVZ.jpg" title="植物大戰殭屍——遊戲畫面"><br>這是一款用植物打趴殭屍的熱門遊戲，已經紅了一段時間了。<br><a id="more"></a></p>
+<p>在遊戲中，不同的植物可能相互作用，產生類似「合體技」的功能。這題的主要目標就是探討如何安排這些植物才能達到最大的攻擊力。為了簡化問題，我們只考慮只有一個殭屍以及田地只有一列的情況。</p>
+<p>一列有$N$格的田地由左至右編號為$0,1,…,N−1$，每格田地的肥沃度是$a_i$。共有$Q$個關卡，而且每一個關卡都只有一個殭屍，並且進行的場地(也就是你能種植物的地方)是$N$格田地中的某一個區間$[L,R)$。而在每一關，你只有一個工具可以用：播種機。這是一個一次性道具，使用方法就是把他放在某一格落在區間內的田地，之後他會開始往右開，並且在所經過的田地都種下一顆種子(含起點)。播種完(也就是超過編號$R$的田地)之後，還會直接輾過殭屍造成一定的傷害。而對於某個已種下種子且肥沃度是$a_i$的格子，過了一小段時間之後就會長出「特徵值」是$a_i$的植物。所種出的植物會發動合體技，產生一顆種子子彈。這顆種子子彈的特徵值就是將所有植物的特徵值$xor$起來後的結果，並且這顆種子子彈會筆直地朝殭屍射過去，造成傷害。傷害的計算方法也非常容易，就是將種子子彈的特徵值和殭屍的特徵值$v$ $xor$後得到的結果。</p>
+<p>對於給定的$Q$個關卡，請計算你能造成的最大傷害。</p>
+<h1 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h1><p>第一行有兩個正整數$N\le {10}^{4},Q\le {10}^{6}$，分別代表田地大小以及關卡數目。<br>第二行有$N$個整數$0\le a_0,a_1,…,{a}_{N−1}&lt;{2}^{30}$，代表每格田地的肥沃度。<br>接下來的$Q$中每行會有三個非負整數$L_i,R_i\le N,v&lt;{2}^{30}$（$L_i&lt;R_i$），分別代表關卡進行場地的左右界以及殭屍的特徵值。</p>
+<h1 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h1><p>對於每個關卡，請輸出能造成的傷害最大值。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">4 2 </span><br><span class="line">0 2 1 3 </span><br><span class="line">0 3 3 </span><br><span class="line">2 4 1 </span><br></pre></td></tr></table></figure>
+
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2 </span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<footer><strong>TIOJ</strong><cite><a href="http://tioj.infor.org/problems/1920" target="_blank" rel="external">1920</a></cite></footer></blockquote>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>題目的每筆詢問要求最大化$a_k\oplus {a}_{k+1}\oplus …\oplus {a}_{R_i}\oplus v_i$，對於$L_i\le k&lt;R_i$。</p>
+<p>我們可以先預處理序列的後綴$xor$值——即$S_j=a_j\oplus {a}_{j+1}\oplus …\oplus {a}_{N-1}$——方便我們能夠$\O(1)$取得一段連續區間的$xor$值。</p>
+<p>那麼問題就變成找到一個$k\in[L_i, R_i)$，最大化${Ans}_{i}=S_k\oplus {S}_{R_i\oplus v_i}$。</p>
+<p>但直接枚舉$k$太慢了（最糟糕會變成$\O(NQ)$），在這裡我們用到一種稱為 Trie（前綴樹）的資料結構來存取「特徵值」的二進制值。<br><img class="images/TIOJ-1920/0.png 圖中將鍵標記在節點上只是為了方便學習與思考，實作時鍵通常不會被顯式地保存在節點中"><br>對二進制值的字典序作排序，第一層存第30位，第二層存第29位，以此類推。</p>
+<p>而現在我們只要維護 $N$ 棵 Trie，並把節點的值改成他底下最小的 index（為 S 的第幾個元素，用在限制右界時作為搜索的節點限制）。在尋找 $S_k$ 時，從上面（高維度）往下（低維度）搜索，儘量選擇和 ${S}_{R_i\oplus v_i}$ 長得不一樣的位元，這樣貪婪的做法是正確的。（和比大小一樣，越高維度有 1 表示一定是比較大的數字，又 $xor$ 想要得到 $1$ 就要兩個位元不同才行）</p>
+<p>但我們很快地就發現維護 $N$ 棵 Trie 是絕對會 MLE 的，為此我們需要持久化該資料結構。<br>我用指標實作，這樣一來當一棵新樹使用到舊版本的子樹時，只要把舊版本的該子樹連到不會被更新到的節點即可。</p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F(n) Fi(i,n)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fi(i,n) Fl(i,0,n)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fl(i,l,n) for(int i=l;i&lt;n;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 10005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="string">'\n'</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">struct</span> Trie &#123;</span><br><span class="line">	Trie(<span class="keyword">int</span> _val = <span class="number">0</span>, Trie *_src = <span class="literal">nullptr</span>) : rb(_val) &#123;</span><br><span class="line">		<span class="keyword">if</span> (_src) ch[<span class="number">0</span>] = _src-&gt;ch[<span class="number">0</span>], ch[<span class="number">1</span>] = _src-&gt;ch[<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">else</span> ch[<span class="number">0</span>] = ch[<span class="number">1</span>] = <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> rb;</span><br><span class="line">	Trie *ch[<span class="number">2</span>];</span><br><span class="line">&#125; *root[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	root[pos] = <span class="keyword">new</span> Trie(pos, root[pos + <span class="number">1</span>]);</span><br><span class="line">	Trie *my = root[pos], *src = root[pos + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> side;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">29</span> ; i &gt;= <span class="number">0</span> ; --i) &#123;</span><br><span class="line">		side = val &gt;&gt; i &amp; <span class="number">1</span>;</span><br><span class="line">		my-&gt;ch[side] = <span class="keyword">new</span> Trie(pos, src ? src-&gt;ch[side] : src);</span><br><span class="line">		my = my-&gt;ch[side];</span><br><span class="line">		<span class="keyword">if</span> (src) src = src-&gt;ch[side];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> val, <span class="keyword">int</span> lim)</span> </span>&#123;</span><br><span class="line">	Trie *my = root[pos];</span><br><span class="line">	<span class="keyword">int</span> side, ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">29</span> ; i &gt;= <span class="number">0</span> ; --i) &#123;</span><br><span class="line">		ans &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">		side = val &gt;&gt; i &amp; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (my-&gt;ch[!side] &amp;&amp; my-&gt;ch[!side]-&gt;rb &lt; lim) ans |= !side, my = my-&gt;ch[!side];</span><br><span class="line">		<span class="keyword">else</span> ans |= side, my = my-&gt;ch[side];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans ^ val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> s[MAXN];</span><br><span class="line">main() &#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">	<span class="keyword">int</span> n, q, l, r, v;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; q;</span><br><span class="line">	F(n) <span class="built_in">cin</span> &gt;&gt; s[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">2</span> ; i &gt;= <span class="number">0</span> ; --i)</span><br><span class="line">		s[i] ^= s[i+<span class="number">1</span>];</span><br><span class="line">	root[n] = <span class="keyword">new</span> Trie(n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = n<span class="number">-1</span> ; i &gt;= <span class="number">0</span> ; --i)</span><br><span class="line">		insert(i, s[i]);</span><br><span class="line">	<span class="keyword">while</span> (q--) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r &gt;&gt; v;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; query(l, s[r] ^ v, r) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -326,13 +330,13 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
       
         <div class="post-tags">
           
-            <a href="/tags/LaTeX/" rel="tag">#LaTeX</a>
+            <a href="/tags/TIOJ/" rel="tag">#TIOJ</a>
           
-            <a href="/tags/MathJax/" rel="tag">#MathJax</a>
+            <a href="/tags/Trie/" rel="tag">#Trie</a>
           
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+            <a href="/tags/持久化/" rel="tag">#持久化</a>
           
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+            <a href="/tags/RMQ/" rel="tag">#RMQ</a>
           
         </div>
       
@@ -341,17 +345,13 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/02/TIOJ-1007/" rel="next" title="TIOJ 1007 . 燈泡問題">
-                <i class="fa fa-chevron-left"></i> TIOJ 1007 . 燈泡問題
+              <a href="/2016/10/11/SG-theorem/" rel="next" title="從 Nim 到 Sprague–Grundy 定理">
+                <i class="fa fa-chevron-left"></i> 從 Nim 到 Sprague–Grundy 定理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/03/TIOJ-1008/" rel="prev" title="TIOJ 1008 . 量杯問題">
-                TIOJ 1008 . 量杯問題 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,7 +512,7 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MathJax-插件"><span class="nav-number">2.</span> <span class="nav-text">MathJax 插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用（LaTeX語法）"><span class="nav-number">3.</span> <span class="nav-text">使用（LaTeX語法）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行內公式"><span class="nav-number">3.1.</span> <span class="nav-text">行內公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果："><span class="nav-number">3.1.1.</span> <span class="nav-text">效果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整行公式"><span class="nav-number">3.2.</span> <span class="nav-text">整行公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果：-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">效果：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#與-Markdown-發生衝突"><span class="nav-number">4.</span> <span class="nav-text">與 Markdown 發生衝突</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果：-2"><span class="nav-number">4.0.1.</span> <span class="nav-text">效果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果：-3"><span class="nav-number">4.0.2.</span> <span class="nav-text">效果：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-Format"><span class="nav-number">2.</span> <span class="nav-text">Input Format</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Output-Format"><span class="nav-number">3.</span> <span class="nav-text">Output Format</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">6.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -770,9 +770,9 @@ MathJax 插件　　有些 Hexo 主題自帶 MathJax，如本站使用的 NexT �
 
     <script type="text/javascript">
       var disqus_shortname = 'fsh0524';
-      var disqus_identifier = '2016/03/03/LaTeX-in-Hexo/';
-      var disqus_title = 'LaTeX 在 Hexo 中的使用';
-      var disqus_url = 'http://fsh0524.github.io/2016/03/03/LaTeX-in-Hexo/';
+      var disqus_identifier = '2016/12/10/TIOJ-1920/';
+      var disqus_title = 'TIOJ 1920 . 植物大戰殭屍';
+      var disqus_url = 'http://fsh0524.github.io/2016/12/10/TIOJ-1920/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
