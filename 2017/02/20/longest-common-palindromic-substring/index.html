@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="DP," />
+  <meta name="keywords" content="fsh0524, blog" />
 
 
 
@@ -59,21 +59,19 @@
 
 
 
-<meta name="description" content="Latest Update: 2016-09-15 04:41:31
-Description　　André Claude Marzipan is the head chef at the French restaurant Le Chaud Chien. He owns a vast number of baking trays, which come in two sizes: 1 foot b">
+<meta name="description" content="Latest Update: 2017-02-20 02:50:58
+Description　　給定兩字串 $S_1, S_2$，其中只包含小寫英文字母之字元，求兩字串之最長共同回文子字串之長度。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ECNA 2015 Problem G . Tray Bien">
-<meta property="og:url" content="http://fsh0524.github.io/2016/09/15/ECNA2015-G/index.html">
+<meta property="og:title" content="最長共同回文子字串 ( Longest Common Palindromic Substring )">
+<meta property="og:url" content="http://fsh0524.github.io/2017/02/20/longest-common-palindromic-substring/index.html">
 <meta property="og:site_name" content="野有蔓草">
-<meta property="og:description" content="Latest Update: 2016-09-15 04:41:31
-Description　　André Claude Marzipan is the head chef at the French restaurant Le Chaud Chien. He owns a vast number of baking trays, which come in two sizes: 1 foot b">
-<meta property="og:image" content="http://fsh0524.github.io/images/ECNA2015-G/0.png">
-<meta property="og:updated_time" content="2016-09-15T08:41:31.000Z">
+<meta property="og:description" content="Latest Update: 2017-02-20 02:50:58
+Description　　給定兩字串 $S_1, S_2$，其中只包含小寫英文字母之字元，求兩字串之最長共同回文子字串之長度。">
+<meta property="og:updated_time" content="2017-02-20T06:50:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ECNA 2015 Problem G . Tray Bien">
-<meta name="twitter:description" content="Latest Update: 2016-09-15 04:41:31
-Description　　André Claude Marzipan is the head chef at the French restaurant Le Chaud Chien. He owns a vast number of baking trays, which come in two sizes: 1 foot b">
-<meta name="twitter:image" content="http://fsh0524.github.io/images/ECNA2015-G/0.png">
+<meta name="twitter:title" content="最長共同回文子字串 ( Longest Common Palindromic Substring )">
+<meta name="twitter:description" content="Latest Update: 2017-02-20 02:50:58
+Description　　給定兩字串 $S_1, S_2$，其中只包含小寫英文字母之字元，求兩字串之最長共同回文子字串之長度。">
 
 
 
@@ -91,7 +89,7 @@ Description　　André Claude Marzipan is the head chef at the French restauran
   };
 </script>
 
-  <title> ECNA 2015 Problem G . Tray Bien | 野有蔓草 </title>
+  <title> 最長共同回文子字串 ( Longest Common Palindromic Substring ) | 野有蔓草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -240,7 +238,7 @@ Description　　André Claude Marzipan is the head chef at the French restauran
             
             
               
-                ECNA 2015 Problem G . Tray Bien
+                最長共同回文子字串 ( Longest Common Palindromic Substring )
               
             
           </h1>
@@ -252,8 +250,8 @@ Description　　André Claude Marzipan is the head chef at the French restauran
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-09-15T08:43:13+08:00" content="2016-09-15">
-              2016-09-15
+            <time itemprop="dateCreated" datetime="2017-02-20T14:02:42+08:00" content="2017-02-20">
+              2017-02-20
             </time>
           </span>
 
@@ -282,8 +280,8 @@ Description　　André Claude Marzipan is the head chef at the French restauran
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/15/ECNA2015-G/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/15/ECNA2015-G/" itemprop="commentsCount"></span>
+                <a href="/2017/02/20/longest-common-palindromic-substring/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/20/longest-common-palindromic-substring/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,55 +302,35 @@ Description　　André Claude Marzipan is the head chef at the French restauran
       
 
       
-        <p>Latest Update: 2016-09-15 04:41:31</p>
-<blockquote><h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>　　André Claude Marzipan is the head chef at the French restaurant Le Chaud Chien. He owns a vast number of baking trays, which come in two sizes: 1 foot by 1 foot, and 1 foot by 2 feet. He stores them along 3-foot deep shelves of various lengths. For example, on a shelf that is 5 feet long, he might store baking trays in either of the two ways shown below:<br><img src="/images/ECNA2015-G/0.png"></p>
+        <p>Latest Update: 2017-02-20 02:50:58</p>
+<blockquote><h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>　　給定兩字串 $S_1, S_2$，其中只包含小寫英文字母之字元，求兩字串之最長共同回文子字串之長度。</p>
 <a id="more"></a>
-<p>　　Of course, there are many more than just these two ways, and in his off hours André often wondershow many different ways he can place trays on a given shelf. André is a bit of <em>un maniaque du rangement</em> (neat freak), so he insists that the trays are always aligned along the two axes defined by the shelf edges, that the edges of the trays are always 1 foot multiples away from any edge, and that no portion of a tray extends beyond the shelf. The matter is complicated by the fact that often there are locations on the shelf where he does not want to put any baking trays, due to leaks above the shelf, dents in the shelf’s surface, etc. Since André is more adept at cuisine than counting, he needs a little help.</p>
-<h1 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h1><p>　　The input consists of two lines: the first line will contain two integers $m, n$, where $1 ≤ m ≤ 24$ indicates the length of the shelf (which is always 3-feet deep) and $n$ indicates the number of bad locations on the shelf. The next line will contain $n$ coordinate pairs $x, y$ indicating the locations where trays should not be placed, where $0 &lt; x &lt; m$ and $0 &lt; y &lt; 3$. No location will have integer coordinates and coordinates are specified to the nearest hundredth. If $n = 0$, this second line will be blank.</p>
-<h1 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h1><p>　　Output the number of ways that trays could be placed on the shelf.</p>
-<h1 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1"></a>Sample Input 1</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 0</span><br></pre></td></tr></table></figure>
+<h1 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h1><p>　　第一行有一個正整數$T$，代表總共有幾筆測試資料。每筆測試資料的第一行為$S_1$，第二行為$S_2$，其長度最長不超過$10^5$個字元。</p>
+<h1 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h1><p>　　對於每筆測試資料，請輸出一行一個整數，代表兩字串之最長共同回文子字串之長度。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">abaxyza</span><br><span class="line">xyzaaba</span><br><span class="line">abaxyzwvcddcpirikapirirarapoporinapeperudo</span><br><span class="line">vwzyxcddcaba</span><br></pre></td></tr></table></figure>
 
-<h1 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1"></a>Sample Output 1</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">823</span><br></pre></td></tr></table></figure>
-
-<h1 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2"></a>Sample Input 2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4 2</span><br><span class="line">0.29 2.44 2.73 1.8</span><br></pre></td></tr></table></figure>
-
-<h1 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2"></a>Sample Output 2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">149</span><br></pre></td></tr></table></figure>
-<footer><strong>Codeforces</strong><cite><a href="http://codeforces.com/gym/100825/" target="_blank" rel="external">ECNA2015</a></cite></footer></blockquote>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>　　題目要在一個$m\times3$的架子上放滿$1\times1$和$1\times2$的托盤，可是上面有一些位子有裂縫或凹痕不能放東西，求放滿除了破洞外的格子的方法數。<br>　　枚舉每一種填滿第$i$行並將第$i+1$行排成第$j$種排列的方法數，在此特別做限制：</p>
-<ul>
-<li>放置托盤不可超出第$i+1$行，保持第$i+2$行為空。</li>
-<li>托盤一定要放在第$i+1$行，即若第$i$行有空位則該列只能放$1\times2$的托盤，橫跨第$i$行與第$i+1$行。</li>
-</ul>
-<p>　　$T=\begin{bmatrix}<br>0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\<br>0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \\<br>0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\<br>0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 2 \\<br>0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\<br>0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \\<br>0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 2 \\<br>1 &amp; 1 &amp; 1 &amp; 2 &amp; 1 &amp; 1 &amp; 2 &amp; 3<br>\end{bmatrix}, {DP}_{i+1} = T\times{DP}_{i}$<br>　　接下來只要在做矩陣乘法的時候把轉移後會放到破洞的狀態略過，並把破洞補入下一個狀態中：<br>　　${DP}_{i+1,j|{B}_{i}} = {DP}_{i+1,j|{B}_{i}}+{DP}_{i, k}\times{T}_{j,k}$<br>　　注意在有破洞時，按上方的限制，$k$在有破洞的那列為空是不合法的。</p>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F(n) Fi(i,n)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fi(i,n) Fl(i,0,n)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fl(i,l,n) for(int i=l;i&lt;n;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line">LL DP[<span class="number">25</span>][<span class="number">8</span>];</span><br><span class="line">LL T[<span class="number">8</span>][<span class="number">8</span>] = &#123;</span><br><span class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>&#125;,</span><br><span class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>&#125;,</span><br><span class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>&#125;,</span><br><span class="line">	&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>&#125;,</span><br><span class="line">	&#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> B[<span class="number">25</span>];</span><br><span class="line"><span class="keyword">int</span> m, n;</span><br><span class="line"><span class="keyword">double</span> x, y;</span><br><span class="line">main() &#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	F(n) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		B[<span class="keyword">int</span>(x)] |= <span class="number">1</span>&lt;&lt;<span class="keyword">int</span>(y);</span><br><span class="line">	&#125;</span><br><span class="line">	DP[<span class="number">0</span>][<span class="number">7</span>] = <span class="number">1</span>;</span><br><span class="line">	F(m) &#123;</span><br><span class="line">		Fi(j,<span class="number">8</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span> (j&amp;B[i]) <span class="keyword">continue</span>;</span><br><span class="line">			Fi(k,<span class="number">8</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span> (!B[i] || (k&amp;B[i]))</span><br><span class="line">					DP[i+<span class="number">1</span>][j|B[i]] += DP[i][k]*T[j][k];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; DP[m][<span class="number">7</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>　　我們先令 $R_1 = Reverse(S_1), R_2 = Reverse(S_2)$，產生兩個反轉後的字串。<br>　　回文有可能出現偶數長度的回文和奇數長度的回文。為了一般化處理，我們在字串的開頭和結尾和每個字元之間加上一個$\Sigma$的字元（例：“abaxyza” 轉換成 “.a.b.a.x.y.z.a.”），如此一來所有的回文都會變成奇數長度，求回原來的長度只需除以二即可。<br>　　接著我們預處理所有字串的前綴Hash，方便我們將來能$O(1)$求取任意一段子字串的Hash值並利用前面構造的$R_i$來$O(1)$判斷其是否為回文。<br>　　（Hash建議要進行兩次，避免碰撞）<br>　　那麼我們只要二分搜回文的長度$L$（必為奇數），並$O(|S|)$將兩字串中所有長度為$L$的回文分別加入一個陣列中並排序，這樣只要使用雙指針$O(N)$遍歷陣列，尋找 Hash 值相同的字串即可。<br>　　（字串中尋找回文對於回文長度具有<font color="red">奇單調性</font>）<br>　　這樣一來的複雜度大約會是很漂亮的$O(NlgN)$ 。</p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">#define F(n) Fi(i,n)</span><br><span class="line">#define Fi(i,n) Fl(i,0,n)</span><br><span class="line">#define Fl(i,l,n) for(int i=l;i&lt;n;++i)</span><br><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define N 200010</span><br><span class="line">#define fir first</span><br><span class="line">#define sec second</span><br><span class="line">typedef pair&lt;int, int&gt; PII;</span><br><span class="line">const PII p(101, 101), q(712271227, 1000000007);</span><br><span class="line">PII h[4][N];</span><br><span class="line">vector&lt;PII&gt; ss[2];</span><br><span class="line">char s[4][N], str[N];</span><br><span class="line">int l[4];</span><br><span class="line">void get_h() &#123;</span><br><span class="line">	F(4) Fi(j, l[i]) &#123;</span><br><span class="line">		h[i][j] = PII((int)s[i][j], (int)s[i][j]);</span><br><span class="line">		if (j)</span><br><span class="line">			h[i][j].fir = (1ll * h[i][j-1].fir * p.fir + h[i][j].fir) % q.fir,</span><br><span class="line">			h[i][j].sec = (1ll * h[i][j-1].sec * p.sec + h[i][j].sec) % q.sec;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">bool notpar(int i, int lb, int rb, PII pL) &#123;</span><br><span class="line">	PII ha = q, hb = q;</span><br><span class="line">	if (lb)</span><br><span class="line">		ha.fir -= 1ll * h[i][lb-1].fir * pL.fir % q.fir,</span><br><span class="line">		ha.sec -= 1ll * h[i][lb-1].sec * pL.sec % q.sec;</span><br><span class="line">	ha.fir = (ha.fir + h[i][rb].fir) % q.fir;</span><br><span class="line">	ha.sec = (ha.sec + h[i][rb].sec) % q.sec;</span><br><span class="line">	int rlb = l[i+2] - rb - 1,</span><br><span class="line">		rrb = l[i+2] - lb - 1;</span><br><span class="line">	if (rlb)</span><br><span class="line">		hb.fir -= 1ll * h[i+2][rlb-1].fir * pL.fir % q.fir,</span><br><span class="line">		hb.sec -= 1ll * h[i+2][rlb-1].sec * pL.sec % q.sec;</span><br><span class="line">	hb.fir = (hb.fir + h[i+2][rrb].fir) % q.fir;</span><br><span class="line">	hb.sec = (hb.sec + h[i+2][rrb].sec) % q.sec;</span><br><span class="line">	return ha != hb;</span><br><span class="line">&#125;</span><br><span class="line">void get_set(int L, PII pL) &#123;</span><br><span class="line">	PII tmp;</span><br><span class="line">	F(2) &#123;</span><br><span class="line">		ss[i].clear();</span><br><span class="line">		Fi(j, l[i]-L+1) &#123;</span><br><span class="line">			if (notpar(i, j, j+L-1, pL)) continue;</span><br><span class="line">			tmp = q;</span><br><span class="line">			if (j)</span><br><span class="line">				tmp.fir -= 1ll * h[i][j-1].fir * pL.fir % q.fir,</span><br><span class="line">				tmp.sec -= 1ll * h[i][j-1].sec * pL.sec % q.sec;</span><br><span class="line">			tmp.fir = (tmp.fir + h[i][j+L-1].fir) % q.fir;</span><br><span class="line">			tmp.sec = (tmp.sec + h[i][j+L-1].sec) % q.sec;</span><br><span class="line">			ss[i].push_back(tmp);</span><br><span class="line">		&#125;</span><br><span class="line">		sort(ss[i].begin(), ss[i].end());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">bool check(int L) &#123;</span><br><span class="line">	PII pL(1, 1);</span><br><span class="line">	F(L) pL = PII(1ll * pL.fir * p.fir % q.fir, 1ll * pL.sec * p.sec % q.sec);</span><br><span class="line">	get_set(L, pL);</span><br><span class="line">	for (int i = 0, j = 0 ; i &lt; ss[0].size() ; ++i) &#123;</span><br><span class="line">		while (j &lt; ss[1].size() &amp;&amp; ss[1][j] &lt; ss[0][i]) ++j;</span><br><span class="line">		if (j &lt; ss[1].size() &amp;&amp; ss[1][j] == ss[0][i]) return false;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line">int lcs() &#123;</span><br><span class="line">	get_h();</span><br><span class="line">	int rb = min(l[0], l[1]) &gt;&gt; 1, ans = 0, bit = 1;</span><br><span class="line">	while (bit &lt;= rb) bit &lt;&lt;= 1;</span><br><span class="line">	for (bit &gt;&gt;= 1 ; bit ; bit &gt;&gt;= 1) &#123;</span><br><span class="line">		ans += bit;</span><br><span class="line">		if (ans &gt; rb || check(ans &lt;&lt; 1 | 1)) ans -= bit;</span><br><span class="line">	&#125;</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br><span class="line">main() &#123;</span><br><span class="line">	ios_base::sync_with_stdio(false);</span><br><span class="line">	cin.tie(NULL);</span><br><span class="line">	int t;</span><br><span class="line">	cin &gt;&gt; t;</span><br><span class="line">	while (t--) &#123;</span><br><span class="line">		memset(s, 0, sizeof(s));</span><br><span class="line">		F(2) &#123;</span><br><span class="line">			cin &gt;&gt; str;</span><br><span class="line">			l[i] = strlen(str);</span><br><span class="line">			for (int j = 0 ; j &lt; (l[i] &lt;&lt; 1 | 1) ; ++j)</span><br><span class="line">				s[i][j] = (j &amp; 1 ? str[j &gt;&gt; 1] : '.'), </span><br><span class="line">				s[i + 2][j] = (j &amp; 1 ? str[l[i] - (j &gt;&gt; 1) - 1] : '.');</span><br><span class="line">			l[i] = l[i + 2] = l[i] &lt;&lt; 1 | 1;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; lcs() &lt;&lt; '\n';</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/DP/" rel="tag">#DP</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/07/ckGraduation/" rel="next" title="致我在紅樓的青春荒唐">
-                <i class="fa fa-chevron-left"></i> 致我在紅樓的青春荒唐
+              <a href="/2016/12/10/TIOJ-1920/" rel="next" title="TIOJ 1920 . 植物大戰殭屍">
+                <i class="fa fa-chevron-left"></i> TIOJ 1920 . 植物大戰殭屍
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/09/NEERC-Northern-2009-E/" rel="prev" title="NEERC 2009, Northern, Problem E. Enigmatic Device">
-                NEERC 2009, Northern, Problem E. Enigmatic Device <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,7 +491,7 @@ Description　　André Claude Marzipan is the head chef at the French restauran
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-Format"><span class="nav-number">2.</span> <span class="nav-text">Input Format</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Output-Format"><span class="nav-number">3.</span> <span class="nav-text">Output Format</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">4.</span> <span class="nav-text">Sample Input 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">5.</span> <span class="nav-text">Sample Output 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">6.</span> <span class="nav-text">Sample Input 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">7.</span> <span class="nav-text">Sample Output 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">8.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">9.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-Format"><span class="nav-number">2.</span> <span class="nav-text">Input Format</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Output-Format"><span class="nav-number">3.</span> <span class="nav-text">Output Format</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">6.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -771,9 +749,9 @@ Description　　André Claude Marzipan is the head chef at the French restauran
 
     <script type="text/javascript">
       var disqus_shortname = 'fsh0524';
-      var disqus_identifier = '2016/09/15/ECNA2015-G/';
-      var disqus_title = 'ECNA 2015 Problem G . Tray Bien';
-      var disqus_url = 'http://fsh0524.github.io/2016/09/15/ECNA2015-G/';
+      var disqus_identifier = '2017/02/20/longest-common-palindromic-substring/';
+      var disqus_title = '最長共同回文子字串 ( Longest Common Palindromic Substring )';
+      var disqus_url = 'http://fsh0524.github.io/2017/02/20/longest-common-palindromic-substring/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
