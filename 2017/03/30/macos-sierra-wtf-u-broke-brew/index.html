@@ -59,18 +59,18 @@
 
 
 
-<meta name="description" content="Latest Update: 2017-03-30 10:00:52
+<meta name="description" content="Latest Update: 2017-03-30 10:02:36
 前言最近想來灌個 Python 3 ，卻發現 Homebrew 版本好像太舊了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MacOS (Sierra 10.12.3) 上更新 Homebrew 🍺 發生的怪事">
 <meta property="og:url" content="http://fsh0524.github.io/2017/03/30/macos-sierra-wtf-u-broke-brew/index.html">
 <meta property="og:site_name" content="野有蔓草">
-<meta property="og:description" content="Latest Update: 2017-03-30 10:00:52
+<meta property="og:description" content="Latest Update: 2017-03-30 10:02:36
 前言最近想來灌個 Python 3 ，卻發現 Homebrew 版本好像太舊了。">
-<meta property="og:updated_time" content="2017-03-30T02:00:52.000Z">
+<meta property="og:updated_time" content="2017-03-30T02:02:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS (Sierra 10.12.3) 上更新 Homebrew 🍺 發生的怪事">
-<meta name="twitter:description" content="Latest Update: 2017-03-30 10:00:52
+<meta name="twitter:description" content="Latest Update: 2017-03-30 10:02:36
 前言最近想來灌個 Python 3 ，卻發現 Homebrew 版本好像太舊了。">
 
 
@@ -302,13 +302,13 @@
       
 
       
-        <p>Latest Update: 2017-03-30 10:00:52</p>
+        <p>Latest Update: 2017-03-30 10:02:36</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想來灌個 Python 3 ，卻發現 Homebrew 版本好像太舊了。<br><a id="more"></a></p>
-<p>太令人沮喪了，於是我決定來跑個 ‘’’brew update’’’</p>
-<h1 id="‘’’-usr-local’’’-must-be-writable"><a href="#‘’’-usr-local’’’-must-be-writable" class="headerlink" title="‘’’/usr/local’’’ must be writable?"></a>‘’’/usr/local’’’ must be writable?</h1><pre><code>Error: /usr/local must be writable!
-</code></pre><p>蛤？我有看錯ㄇ？我明明記得 Homebrew 不用 ‘’’/usr/local’’’ 權限的啊？？？</p>
+<p>太令人沮喪了，於是我決定來跑個 brew update</p>
+<h1 id="usr-local-must-be-writable"><a href="#usr-local-must-be-writable" class="headerlink" title="/usr/local must be writable?"></a>/usr/local must be writable?</h1><pre><code>Error: /usr/local must be writable!
+</code></pre><p>蛤？我有看錯ㄇ？我明明記得 Homebrew 不用 /usr/local 權限的啊？？？</p>
 <pre><code>sudo chown -R $(whoami) /usr/local
-</code></pre><p>之後再執行一次 ‘’’brew update’’’ ，看樣子是成功了，不過又被嘲諷了一次⋯⋯</p>
+</code></pre><p>之後再執行一次 brew update ，看樣子是成功了，不過又被嘲諷了一次⋯⋯</p>
 <pre><code>Homebrew no longer needs to have ownership of /usr/local. If you wish you can
 return /usr/local to its default ownership with:
   sudo chown root:wheel /usr/local
@@ -503,7 +503,7 @@ return /usr/local to its default ownership with:
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘’’-usr-local’’’-must-be-writable"><span class="nav-number">2.</span> <span class="nav-text">‘’’/usr/local’’’ must be writable?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Homebrew-🍺-你在跟我開玩笑嗎？-╯°□°）╯︵-┻━┻"><span class="nav-number">3.</span> <span class="nav-text">Homebrew 🍺 你在跟我開玩笑嗎？ (╯°□°）╯︵ ┻━┻</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#usr-local-must-be-writable"><span class="nav-number">2.</span> <span class="nav-text">/usr/local must be writable?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Homebrew-🍺-你在跟我開玩笑嗎？-╯°□°）╯︵-┻━┻"><span class="nav-number">3.</span> <span class="nav-text">Homebrew 🍺 你在跟我開玩笑嗎？ (╯°□°）╯︵ ┻━┻</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
