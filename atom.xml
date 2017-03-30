@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fsh0524.github.io/"/>
-  <updated>2017-03-30T00:34:32.000Z</updated>
+  <updated>2017-03-30T01:57:43.000Z</updated>
   <id>http://fsh0524.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MacOS (Sierra 10.12.3) 上更新 Homebrew 🍺 發生的怪事</title>
+    <link href="http://fsh0524.github.io/2017/03/30/macos-sierra-wtf-u-broke-brew/"/>
+    <id>http://fsh0524.github.io/2017/03/30/macos-sierra-wtf-u-broke-brew/</id>
+    <published>2017-03-30T00:37:16.000Z</published>
+    <updated>2017-03-30T01:57:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Latest Update: 2017-03-30 09:57:43</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想來灌個 Python 3 ，卻發現 Homebrew 版本好像太舊了。<br><a id="more"></a></p>
+<p>太令人沮喪了，於是我決定來跑個 ‘’brew update’’</p>
+<h1 id="‘’-usr-local’’-must-be-writable"><a href="#‘’-usr-local’’-must-be-writable" class="headerlink" title="‘’/usr/local’’ must be writable?"></a>‘’/usr/local’’ must be writable?</h1><p>‘’Error: /usr/local must be writable!’’</p>
+<p>蛤？我有看錯ㄇ？我明明記得 Homebrew 不用 ‘’/usr/local’’ 權限的啊？？？</p>
+<p>‘’sudo chown -R $(whoami) /usr/local’’</p>
+<p>之後再執行一次 ‘’brew update’’ ，看樣子是成功了，不過又被嘲諷了一次⋯⋯</p>
+<pre><code>Homebrew no longer needs to have ownership of /usr/local. If you wish you can
+return /usr/local to its default ownership with:
+  sudo chown root:wheel /usr/local
+</code></pre><h1 id="Homebrew-🍺-你在跟我開玩笑嗎？-╯°□°）╯︵-┻━┻"><a href="#Homebrew-🍺-你在跟我開玩笑嗎？-╯°□°）╯︵-┻━┻" class="headerlink" title="Homebrew 🍺 你在跟我開玩笑嗎？ (╯°□°）╯︵ ┻━┻"></a>Homebrew 🍺 你在跟我開玩笑嗎？ (╯°□°）╯︵ ┻━┻</h1><blockquote><p>There’s no such thing as “root users.” “root” is a single user (user id 0). You can enable account login for the root user as described in that support article, but the root user always exists either way.</p>
+<p>By contrast, “admin” is a group. Users who are members of the admin group are characterized by their write access to /Applications, their ability to use “sudo,” and their ability to install software.</p>
+<p>By default, brew is designed around the idea that the brew prefix (/usr/local) and all of its contents will be writable by all members of the admin group. Various things (usually nothing done by brew itself) can cause one or more things in /usr/local to end up not being writable by all admin users. The commands above recursively modify (if needed) the entries within /usr/local to ensure that the group assigned to each entry is admin, and that the admin group has write access to each entry.</p>
+<pre><code>sudo chmod -R g+w /usr/local
+</code></pre><p>won’t be sufficient if a file or directory has group wheel, since admin users are usually not members of group wheel. The command would indeed ensure writability for members of wheel, but that doesn’t help your user if it’s a member of admin but not a member of wheel. So you also have to set the group of the file to be admin in order for g+w to actually make any difference.</p>
+<footer><strong>ilovezfs</strong><cite><a href="https://github.com/Homebrew/legacy-homebrew/issues/49895" target="_blank" rel="external">49895</a></cite></footer></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Latest Update: 2017-03-30 09:57:43&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;最近想來灌個 Python 3 ，卻發現 Homebrew 版本好像太舊了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="記事" scheme="http://fsh0524.github.io/categories/%E8%A8%98%E4%BA%8B/"/>
+    
+    
+      <category term="Homebrew" scheme="http://fsh0524.github.io/tags/Homebrew/"/>
+    
+      <category term="MacOS Sierra" scheme="http://fsh0524.github.io/tags/MacOS-Sierra/"/>
+    
+  </entry>
   
   <entry>
     <title>最長共同回文子字串 ( Longest Common Palindromic Substring )</title>
@@ -644,13 +684,13 @@
       <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
     
     
-      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
-    
       <category term="BFS" scheme="http://fsh0524.github.io/tags/BFS/"/>
     
       <category term="狀態壓縮" scheme="http://fsh0524.github.io/tags/%E7%8B%80%E6%85%8B%E5%A3%93%E7%B8%AE/"/>
     
       <category term="Hash" scheme="http://fsh0524.github.io/tags/Hash/"/>
+    
+      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
     
   </entry>
   
