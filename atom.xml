@@ -684,13 +684,13 @@ return /usr/local to its default ownership with:
       <category term="題解" scheme="http://fsh0524.github.io/categories/%E9%A1%8C%E8%A7%A3/"/>
     
     
+      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
+    
       <category term="BFS" scheme="http://fsh0524.github.io/tags/BFS/"/>
     
       <category term="狀態壓縮" scheme="http://fsh0524.github.io/tags/%E7%8B%80%E6%85%8B%E5%A3%93%E7%B8%AE/"/>
     
       <category term="Hash" scheme="http://fsh0524.github.io/tags/Hash/"/>
-    
-      <category term="TIOJ" scheme="http://fsh0524.github.io/tags/TIOJ/"/>
     
   </entry>
   
